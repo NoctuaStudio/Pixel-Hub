@@ -15,11 +15,13 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
+        String continuarConectado = req.getParameter("ContinuarConectado");
         // salvar no banco de dados
         // enviar um email para o admin com a mensagem
       
         System.out.println(email);
         System.out.println(senha);
+        System.out.println(continuarConectado);
 
     }
 
