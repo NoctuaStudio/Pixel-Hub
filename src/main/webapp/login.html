@@ -177,13 +177,13 @@
         </div>
 
         <div class="modal-body p-5 pt-0">
-          <form class="" action="login" method="post">
+          <form class="">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="nome@exemplo.com" name = "email">
+              <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="nome@exemplo.com">
               <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Senha" name = "senha">
+              <input type="password" name="senha" class="form-control rounded-3" id="floatingPassword" placeholder="Senha">
               <label for="floatingPassword">Senha</label>
             </div>
             <div>
@@ -191,7 +191,7 @@
                 <input type="checkbox" value="true" name="ContinuarConectado"> Continuar conectado
               </label>
             </div>
-            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"> <a href="home.html" style="text-decoration: none; color: white;">Login</a></button>
+            <button name="login" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"> <a href="home.html" style="text-decoration: none; color: white;">Login</a></button>
             <div style="justify-content: center; display: flex; margin-bottom: -4%; margin-top: 2%;">
               <p> <a href="recuperar.html">Esqueci minha senha</a></p>
             </div>
