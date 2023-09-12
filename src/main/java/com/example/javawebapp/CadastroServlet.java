@@ -11,23 +11,35 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "cadastro", value = "/cadastro")
 public class CadastroServlet extends HttpServlet {   
 
-    //VARÁVEIS
-
-    // 4. sobreescrever os métodos do???  doGet, doPost, doDelete, etc
-    // e definir o comportamento
-
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String nome = req.getParameter("nome");
-        String email = req.getParameter("email");
+       
+        String nome = req.getParameter("nome");  
+        String sobrenome = req.getParameter("sobrenome");
+        String username = req.getParameter("username"); 
         String senha = req.getParameter("senha");
         String confirmar = req.getParameter("confirmar");
-        // salvar no banco de dados
-        // enviar um email para o admin com a mensagem
+        String email = req.getParameter("email");
+        String telefone = req.getParameter("telefone");
+        String endereco = req.getParameter("endereco");
+        String estado = req.getParameter("estado");
+        String cidade = req.getParameter("cidade");
+        String cep = req.getParameter("cep");
+        String termos = req.getParameter("termos");
+
+
         System.out.println(nome);
-        System.out.println(email);
+        System.out.println(sobrenome);   
+        System.out.println(username);  
         System.out.println(senha);
         System.out.println(confirmar);
+        System.out.println(email);
+        System.out.println(telefone);
+        System.out.println(endereco);
+        System.out.println(estado);
+        System.out.println(cidade);
+        System.out.println(cep);
+        System.out.println(termos);
     }
-    
 }
