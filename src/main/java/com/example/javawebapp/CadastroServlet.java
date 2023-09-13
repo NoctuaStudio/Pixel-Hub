@@ -19,7 +19,6 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "cadastro", value = "/cadastro")
 public class CadastroServlet extends HttpServlet {   
 
-    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
        
