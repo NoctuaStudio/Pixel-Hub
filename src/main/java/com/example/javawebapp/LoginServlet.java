@@ -31,6 +31,9 @@ public class LoginServlet extends HttpServlet {
         System.out.println(senha);
         System.out.println(continuarConectado);
 
+        String redirectURL = "/mudar-aqui-para-home";
+        res.sendRedirect(redirectURL);
+
     }
 
 }

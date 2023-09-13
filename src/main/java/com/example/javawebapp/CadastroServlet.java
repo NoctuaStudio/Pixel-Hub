@@ -48,5 +48,8 @@ public class CadastroServlet extends HttpServlet {
         System.out.println(cidade);
         System.out.println(cep);
         System.out.println(termos);
+
+        String redirectURL = "/login";
+        res.sendRedirect(redirectURL);
     }
 }
