@@ -49,7 +49,6 @@ public class CadastroServlet extends HttpServlet {
         System.out.println(cep);
         System.out.println(termos);
 
-        String redirectURL = "/java-web-app-1.0/login.html";
-        res.sendRedirect(redirectURL);
+    
     }
 }
