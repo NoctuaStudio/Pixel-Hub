@@ -8,6 +8,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
+// 1. criar uma classe em java
+// 2. extends HttpServlet
+// 3. "roteamento" anotar a classe com @WebServlet definir
+// name e value
+// 4. sobreescrever os métodos do???  doGet, doPost, doDelete, etc
+// e definir o comportamento
+
 @WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {   
 
