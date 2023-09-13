@@ -143,7 +143,7 @@
             <a class="nav-link" href="#">Pré-Vendas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/suporte">Suporte</a>
+            <a class="nav-link" href="suporte.html">Suporte</a>
           </li>
         </ul>
         <form class="d-flex w-25" role="search" style="margin-right: 15%;">
