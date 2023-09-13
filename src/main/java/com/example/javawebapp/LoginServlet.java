@@ -31,8 +31,10 @@ public class LoginServlet extends HttpServlet {
         System.out.println(senha);
         System.out.println(continuarConectado);
 
+        //fazer em todos os redirect    
         String redirectURL = "/mudar-aqui-para-home";
-        res.sendRedirect(redirectURL);
+        res.sendRedirect(redirectURL); // caso nao fuoncione, tente esse "res.setHeader("Location", redirectURL);"
+        res.setStatus(HttpServletResponse.SC_FOUND);
 
     }
 
