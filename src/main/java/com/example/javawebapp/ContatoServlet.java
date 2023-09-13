@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 // 4. sobreescrever os métodos do???  doGet, doPost, doDelete, etc
 // e definir o comportamento
 
-@WebServlet(name = "contato", value = "jawa/contato")
+@WebServlet(name = "contato", value = "/contato")
 public class ContatoServlet extends HttpServlet {
 
     @Override
