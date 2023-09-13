@@ -291,7 +291,7 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Jogos</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vendas</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+        <li class="nav-item"><a href="suporte.html" class="nav-link px-2 text-body-secondary">Suporte</a></li>
       </ul>
     </footer>
   </div>
