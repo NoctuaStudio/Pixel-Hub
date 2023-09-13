@@ -28,8 +28,8 @@ public class RecuperarServlet extends HttpServlet {
        
         System.out.println(novaSenha);
         System.out.println(confirmarSenha);
-        
-        String redirectURL = "/login";
+
+        String redirectURL = "/java-web-app-1.0/login.html";
         res.sendRedirect(redirectURL);
     }
 
