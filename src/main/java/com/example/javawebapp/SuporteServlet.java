@@ -21,11 +21,14 @@ public class SuporteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String assunto = req.getParameter("assunto");    
+        String titulo = req.getParameter("titulo");  
         String mensagem = req.getParameter("suporte_mensagem");      
-        String assunto = req.getParameter("assunto");  
+         
        
-        System.out.println(mensagem);
         System.out.println(assunto);
+        System.out.println(titulo);
+        System.out.println(mensagem);
     }
     
 }
