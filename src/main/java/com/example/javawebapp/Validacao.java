@@ -17,6 +17,24 @@ private ArrayList<String> erros = new ArrayList<String>();
         }        
     }
 
+    public void validarSobrenome(String sobrenome){
+        if (sobrenome.isBlank() || sobrenome.isEmpty()){
+            erros.add("O sobrenome não pode estar vazio.");
+        }
+    }
+
+    public void validarUsername(String username){
+        if (username.isBlank() || username.isEmpty()){
+            erros.add("O username não pode estar vazio.");
+        }
+    }
+
+    public void confirmarSenha(String senha, String confirmar){
+        if(senha != confirmar){
+            erros.add("As senhas devem ser iguais.");
+        }
+    }
+
     public void validarEmail(String email) {
         if(email.isBlank() || email == null){
             erros.add("O email não pode ser vazio");

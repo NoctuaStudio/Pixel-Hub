@@ -22,7 +22,7 @@ public class CadastroServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-       
+        
         String nome = req.getParameter("nome");  
         String sobrenome = req.getParameter("sobrenome");
         String username = req.getParameter("username"); 
@@ -35,26 +35,19 @@ public class CadastroServlet extends HttpServlet {
         String cidade = req.getParameter("cidade");
         String cep = req.getParameter("cep");
         String termos = req.getParameter("termos");
-        ArrayList<String> erros = new ArrayList<String>();        
 
+        ArrayList<String> erros = new ArrayList<String>(); 
 
-        if (nome.isBlank() || nome.isEmpty()){
-            erros.add("O nome não pode estar vazio.");
-        }
-        if (sobrenome.isBlank() || sobrenome.isEmpty()){
-            erros.add("O sobrenome não pode estar vazio.");
-        }
-        if (username.isBlank() || username.isEmpty()){
-            erros.add("O username não pode estar vazio.");
-        }
+        Validacao cadastro = new Validacao(); 
+        cadastro.validarNome(nome);
+        cadastro.validarSobrenome(sobrenome);
+        cadastro.validarUsername(username);
+
+        cadastro.confirmarSenha(senha, confirmar);
+        cadastro.validarEmail(email);
+
         if (senha.isBlank() || senha.isEmpty() || confirmar.isBlank() || confirmar.isEmpty()){
             erros.add("A senha não pode estar vazia.");
-        }
-        if (senha != confirmar){
-            erros.add("As senhas devem ser iguais.");
-        }
-        if (!email.contains("@")){
-            erros.add("O email deve ser válido.");
         }
 
         if(senha != null){
@@ -100,9 +93,7 @@ public class CadastroServlet extends HttpServlet {
                 erros.add("A senha deve ter no mínimo 8 caracteres");
             }
         }
-        if (email.isBlank() || email.isEmpty()){
-            erros.add("O email não pode estar vazio.");
-        }
+        
         if (telefone.isBlank() || telefone.isEmpty()){
             erros.add("O telefone não pode estar vazio.");
         }
