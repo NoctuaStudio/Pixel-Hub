@@ -89,8 +89,6 @@ private Boolean[] errosSenha = new Boolean[5];
         boolean verificarEspecial = false;
         boolean verificarTamanho = false;
 
-
-    
         char[] caracteresSenha = senha.toCharArray();
         for (char c : caracteresSenha) {
             if (Character.isUpperCase(c)){
@@ -138,5 +136,23 @@ private Boolean[] errosSenha = new Boolean[5];
             // Por exemplo, você pode imprimir uma mensagem de erro.
             erros.add("CEP inválido!");
         }
-}
+    }
+
+    public void validarAssunto(String assunto){
+        if (assunto.isBlank() || assunto.isEmpty()){
+            erros.add("O assunto não pode estar vazio.");
+        }
+    }
+
+    public void validarTitulo(String titulo){
+        if (titulo.isBlank() || titulo.isEmpty()){
+            erros.add("O titulo não pode estar vazio.");
+        }
+    }
+
+    public void validarMensagem(String mensagem){
+        if (mensagem.isBlank() || mensagem.isEmpty()){
+            erros.add("A mensagem não pode estar vazio.");
+        }
+    }
 }
