@@ -276,7 +276,7 @@
 
                                     <div class="col-md-4">
                                         <label for="cidade" class="form-label">Cidade*</label>
-                                        <select class="form-select" id="cidade" name="cidade" required>
+                                        <select class="form-select" id="cidade" name="cidade" value="${cidade}" required>
                                             <option value="">-</option>
                                             <option>São Paulo</option>
                                             <option>Belo Horizonte</option>
@@ -288,7 +288,7 @@
 
                                     <div class="col-md-3">
                                         <label for="cep" class="form-label" required>CEP*</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="" value="" required>
+                                        <input type="text" class="form-control" id="cep" name="cep" placeholder="" value="${cep}" required>
                                         <div class="invalid-feedback">
                                             Zip code required.
                                         </div>
