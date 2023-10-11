@@ -125,15 +125,17 @@ private Boolean[] errosSenha = new Boolean[5];
         errosSenha[4] = verificarTamanho; 
     }
 
-    public void validarCep (String cep){
-         //Método que valida o Cep
+    public void validarCep(String cep) {
+        if (cep.length() == 8) {
+            cep = cep.substring(0, 5) + "-" + cep.substring(5);
+        }
         
-             if (cep.length() == 8)
-             {
-                 cep = cep.substring(0, 5) + "-" + cep.substring(5, 3);
-                 //txt.Text = cep;
-             }
-            //return System.Text.RegularExpressions.Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
-         
-    }
+        Pattern pattern = Pattern.compile("\\d{5}-\\d{3}");
+        Matcher matcher = pattern.matcher(cep);
+
+        if (!matcher.matches()) {
+            // Adicione o erro a uma lista de erros ou realize alguma ação apropriada aqui.
+            // Por exemplo, você pode imprimir uma mensagem de erro.
+            erros.add("CEP inválido!");
+        }
 }
