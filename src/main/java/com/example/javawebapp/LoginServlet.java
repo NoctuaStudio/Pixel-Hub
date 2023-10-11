@@ -26,10 +26,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 
-
-
-
-
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
         String continuarConectado = req.getParameter("ContinuarConectado");
@@ -37,44 +33,11 @@ public class LoginServlet extends HttpServlet {
 
         Validacao login = new Validacao();
         login.validarEmail(email);
-
+        login.validarSenha(senha);
 
         ArrayList<String> erros = new ArrayList();
+        erros = login.getErros();
 
-        boolean verificarMinuscula = false;
-        boolean verificarMaiuscula = false;
-        boolean verificarNumero = false;
-        boolean verificarEspecial = false;
-
-
-        if(email.isBlank() || email == null){
-            erros.add("O email não pode ser vazio");
-        }else{
-
-                }
-
-        if(senha.isBlank() || senha == null){
-            erros.add("A senha não pode ser vazia");
-        }
-        char[] caracteresSenha = senha.toCharArray();
-        for (char c : caracteresSenha) {
-            if (Character.isUpperCase(c)){
-                verificarMaiuscula = true;
-            }
-            if (Character.isLowerCase(c)) {
-                verificarMinuscula = true;
-            }
-            if (Character.isDigit(c)){
-                verificarNumero = true;
-            }
-        }
-        if(senha.contains("@$!%*#?&+-")){
-            verificarEspecial = true;
-        }
-        if(senha.length() < 8 || !verificarMaiuscula || !verificarMinuscula || !verificarEspecial || !verificarNumero){
-            erros.add("Senha inválida");
-        }
-        
         if(erros.isEmpty()){
             res.sendRedirect("index.jsp");
         }else{
