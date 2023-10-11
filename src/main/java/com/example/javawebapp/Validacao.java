@@ -139,3 +139,4 @@ private Boolean[] errosSenha = new Boolean[5];
             erros.add("CEP inválido!");
         }
 }
+}
