@@ -1,8 +1,6 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
-import java.util.ArrayList;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -31,15 +29,16 @@ public class SuporteServlet extends HttpServlet {
         suporte.validarTitulo(titulo);
         suporte.validarMensagem(mensagem);
 
-        ArrayList<String> erros = new ArrayList<String>(); 
-        erros = suporte.getErros();
+       
 
-        if(erros.isEmpty()){
+
+        if(suporte.getErros().isEmpty()){
             res.sendRedirect("index.jsp");
         } else {
             req.setAttribute("assunto", assunto);
             req.setAttribute("titulo", titulo);
             req.setAttribute("suporte_mensagem", mensagem);
+            req.setAttribute("erros", suporte.getErros());
             req.getRequestDispatcher("suporte.jsp").forward(req, res);
         }
 

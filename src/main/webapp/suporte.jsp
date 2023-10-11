@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
@@ -186,6 +188,24 @@
   <main style="display: flex; justify-content: center; ">
     <div class="col-md-10 col-lg-8">
       <div style="background-color: white;"></div>
+
+
+      
+
+      <c:if test="${erros != null}">
+        <div style="display: flex; justify-content: center; margin: 20px;">
+            <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
+                <ul style="text-decoration: none;">
+                    <c:forEach var="erro" items="${erros}">
+                    <li>${erro}</li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </c:if>
+
+
+
       <div style="padding: 7%;">
         <h4 class="mb-3" style="margin-top: 15px;">Suporte</h4>
         <form class="needs-validation" action="suporte" method="post">
@@ -193,9 +213,6 @@
             <div class="col-sm-6">
               <label for="nome" class="form-label">Assunto</label>
               <input type="text" class="form-control" id="assunto" name="assunto" value="" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
             </div>
 
             <div class="col-sm-6">
