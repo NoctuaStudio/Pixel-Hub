@@ -59,7 +59,7 @@ public class CadastroServlet extends HttpServlet {
         }
 
         if (erros.isEmpty()) {
-            res.sendRedirect("index.jsp");
+            res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("sobrenome", sobrenome);   
