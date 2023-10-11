@@ -29,9 +29,6 @@ public class SuporteServlet extends HttpServlet {
         suporte.validarTitulo(titulo);
         suporte.validarMensagem(mensagem);
 
-       
-
-
         if(suporte.getErros().isEmpty()){
             res.sendRedirect("index.jsp");
         } else {

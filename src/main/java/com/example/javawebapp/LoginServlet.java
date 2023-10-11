@@ -1,7 +1,6 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,16 +32,13 @@ public class LoginServlet extends HttpServlet {
         login.validarEmail(email);
         login.validarSenha(senha);
 
-        ArrayList<String> erros = new ArrayList();
-        erros = login.getErros();
-
-        if(erros.isEmpty()){
+        if(login.getErros().isEmpty()){
             res.sendRedirect("index.jsp");
         }else{
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("continuarConectado", continuarConectado);
-            req.setAttribute("erros", erros);
+            req.setAttribute("erros", login.getErros());
             req.getRequestDispatcher("login.jsp").forward(req, res);
         }
         // salvar no banco de dados

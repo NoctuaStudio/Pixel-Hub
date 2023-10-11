@@ -1,7 +1,6 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -48,17 +47,12 @@ public class CadastroServlet extends HttpServlet {
         cadastro.validarEndereco(endereco);
         cadastro.validarEstado(estado);
         cadastro.validarCidade(cidade);
+        cadastro.validarCep(cep);
 
         Boolean[] errosSenha = cadastro.getErrosSenha();
 
-        ArrayList<String> erros = new ArrayList<String>(); 
-        erros = cadastro.getErros();
 
-        if (cep.isBlank() || cep.isEmpty()){
-            erros.add("O CEP não pode estar vazio.");
-        }
-
-        if (erros.isEmpty()) {
+        if (cadastro.getErros().isEmpty()) {
             res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
@@ -73,7 +67,7 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("cidade", cidade);
             req.setAttribute("cep", cep);
             req.setAttribute("termos", termos);
-            req.setAttribute("erros", erros);
+            req.setAttribute("erros", cadastro.getErros());
             req.setAttribute("errosSenha", errosSenha);
             req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
