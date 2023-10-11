@@ -174,6 +174,9 @@
                     <c:forEach var="erro" items="${erros}">
                     <li>${erro}</li>
                     </c:forEach>
+                    <c:forEach var="erro" items="${erroSenha}">
+                    <li>${erro}</li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>

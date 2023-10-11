@@ -1,6 +1,7 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -51,8 +52,10 @@ public class CadastroServlet extends HttpServlet {
 
         Boolean[] errosSenha = cadastro.getErrosSenha();
 
+        ArrayList<String> erros = new ArrayList<String>();
+        erros = cadastro.getErros();
 
-        if (cadastro.getErros().isEmpty()) {
+        if (erros.isEmpty()) {
             res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
@@ -67,7 +70,7 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("cidade", cidade);
             req.setAttribute("cep", cep);
             req.setAttribute("termos", termos);
-            req.setAttribute("erros", cadastro.getErros());
+            req.setAttribute("erros", erros);
             req.setAttribute("errosSenha", errosSenha);
             req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }

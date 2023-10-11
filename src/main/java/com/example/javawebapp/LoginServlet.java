@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("senha", senha);
             req.setAttribute("continuarConectado", continuarConectado);
             req.setAttribute("erros", login.getErros());
+            req.setAttribute("erroSenha", login.getErrosSenha());
             req.getRequestDispatcher("login.jsp").forward(req, res);
         }
         // salvar no banco de dados
