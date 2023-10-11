@@ -1,6 +1,5 @@
-
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -289,7 +288,7 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Jogos</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vendas</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre</a></li>
-        <li class="nav-item"><a href="java-web-app-1.0/suporte.jsp" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+        <li class="nav-item"><a href="java-web-app-1.0/suporte" class="nav-link px-2 text-body-secondary">Suporte</a></li>
       </ul>
     </footer>
   </div>
