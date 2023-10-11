@@ -17,7 +17,7 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
         return errosSenha;
         }
 
-        
+
     public void validarNome(String nome) {
         if (nome.isBlank() || nome.isEmpty()){
             erros.add("O nome não pode estar vazio.");
@@ -124,5 +124,17 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
         errosSenha.add(verificarNumero);
         errosSenha.add(verificarEspecial);
         errosSenha.add(verificarTamanho); 
+    }
+
+    public void validarCep (String cep){
+         //Método que valida o Cep
+        
+             if (cep.length() == 8)
+             {
+                 cep = cep.substring(0, 5) + "-" + cep.substring(5, 3);
+                 //txt.Text = cep;
+             }
+            //return System.Text.RegularExpressions.Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
+         
     }
 }
