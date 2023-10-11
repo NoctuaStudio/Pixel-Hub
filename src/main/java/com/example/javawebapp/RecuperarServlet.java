@@ -1,6 +1,7 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,7 +30,17 @@ public class RecuperarServlet extends HttpServlet {
         recuperar.validarSenha(novaSenha);
         recuperar.confirmarSenha(novaSenha, confirmarSenha);
        
-        
+        ArrayList<String> erros = new ArrayList();
+        erros = recuperar.getErros();
+
+        if(erros.isEmpty()){
+            res.sendRedirect("login.jsp");
+        }else{
+            req.setAttribute("novaSenha", novaSenha);
+            req.setAttribute("confirmarSenha", confirmarSenha);
+            req.setAttribute("erros", erros);
+            req.getRequestDispatcher("recuperar.jsp").forward(req, res);
+        }
 
     }
 
