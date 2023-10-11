@@ -49,10 +49,7 @@ public class CadastroServlet extends HttpServlet {
         cadastro.validarEstado(estado);
         cadastro.validarCidade(cidade);
 
-        
-        
-        ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
-        errosSenha = cadastro.getErrosSenha();
+        Boolean[] errosSenha = cadastro.getErrosSenha();
 
         ArrayList<String> erros = new ArrayList<String>(); 
         erros = cadastro.getErros();
