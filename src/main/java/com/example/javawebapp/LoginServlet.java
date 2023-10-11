@@ -25,11 +25,9 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
         String continuarConectado = req.getParameter("ContinuarConectado");
-
 
         Validacao login = new Validacao();
         login.validarEmail(email);
@@ -47,14 +45,7 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("login.jsp").forward(req, res);
         }
         // salvar no banco de dados
-        // enviar um email para o admin com a mensagem
-      
-        System.out.println(email);
-        System.out.println(senha);
-        System.out.println(continuarConectado);
-
         //fazer em todos os redirect    
-      
 
     }
 
