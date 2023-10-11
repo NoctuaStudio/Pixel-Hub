@@ -36,7 +36,6 @@ public class CadastroServlet extends HttpServlet {
         String cep = req.getParameter("cep");
         String termos = req.getParameter("termos");
 
-        ArrayList<String> erros = new ArrayList<String>(); 
 
         Validacao cadastro = new Validacao(); 
         cadastro.validarNome(nome);
@@ -51,12 +50,16 @@ public class CadastroServlet extends HttpServlet {
         cadastro.validarCidade(cidade);
 
         
+        
+        ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
+        errosSenha = cadastro.getErrosSenha();
+
+        ArrayList<String> erros = new ArrayList<String>(); 
+        erros = cadastro.getErros();
+
         if (cep.isBlank() || cep.isEmpty()){
             erros.add("O CEP não pode estar vazio.");
         }
-
-        ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
-        errosSenha = cadastro.getErrosSenha();
 
         if (erros.isEmpty()) {
             res.sendRedirect("index.jsp");
