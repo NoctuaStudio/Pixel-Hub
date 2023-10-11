@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
@@ -157,7 +158,7 @@
                                 <div class="row g-3">
                                     <div class="col-sm-6">
                                         <label for="nome" class="form-label">Nome*</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" value="" required>
+                                        <input type="text" class="form-control" id="nome" name="nome" value="${nome}" required>
                                         <div class="invalid-feedback">
                                             Valid first name is required.
                                         </div>
@@ -165,7 +166,7 @@
 
                                     <div class="col-sm-6">
                                         <label for="sobrenome" class="form-label">Sobrenome*</label>
-                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="" required>
+                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="${sobrenome}" required>
                                         <div class="invalid-feedback">
                                             Valid last name is required.
                                         </div>
@@ -175,7 +176,7 @@
                                         <label for="Username" class="form-label">username*</label>
                                         <div class="input-group has-validation">
                                             <span class="input-group-text">@</span>
-                                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" value=""
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="${username}"
                                                 required>
                                             <div class="invalid-feedback">
                                                 Your username is required.
@@ -193,7 +194,7 @@
                                                     <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
                                                 </svg>
                                             </span>
-                                            <input type="password" class="form-control" id="senha" name="senha" value=""
+                                            <input type="password" class="form-control" id="senha" name="senha" value="${senha}"
                                                 required>
                                             <div class="invalid-feedback">
                                                 Your username is required.
@@ -211,7 +212,7 @@
                                                     <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
                                                 </svg>
                                             </span>
-                                            <input type="password" class="form-control" id="confirmar" name="confirmar" value=""
+                                            <input type="password" class="form-control" id="confirmar" name="confirmar" value="${confirmar}"
                                                 required>
                                             <div class="invalid-feedback">
                                                 Your username is required.
@@ -237,7 +238,7 @@
                                     <div class="col-sm-6">
                                         <label for="email" class="form-label">Email* <span
                                                 class="text-body-secondary"></span></label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="voce@exemplo.com" value="" required>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="voce@exemplo.com" value="${email}" required>
                                         <div class="invalid-feedback">
                                             Please enter a valid email address for shipping updates.
                                         </div>
@@ -246,7 +247,7 @@
                                     <div class="col-sm-6">
                                         <label for="telefone" class="form-label">Telefone <span
                                                 class="text-body-secondary"></span></label>
-                                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 94002-8922" value=""> 
+                                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(11) 94002-8922" value="${telefone}"> 
                                         <div class="invalid-feedback">
                                             Please enter a valid email address for shipping updates.
                                         </div>
@@ -254,7 +255,7 @@
 
                                     <div class="col-12">
                                         <label for="endereco" class="form-label">Endereço*</label>
-                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="1234 Rua Lula da Silva" value=""
+                                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="1234 Rua Lula da Silva" value="${endereco}"
                                             required>
                                         <div class="invalid-feedback">
                                             Please enter your shipping address.
@@ -263,7 +264,7 @@
 
                                     <div class="col-md-5">
                                         <label for="estado" class="form-label">Estado*</label>
-                                        <select class="form-select" id="estado" name="estado" required>
+                                        <select class="form-select" id="estado" name="estado" value="${estado}" required>
                                             <option value="">-</option>
                                             <option>São Paulo</option>
                                             <option>Minas-Gerais</option>

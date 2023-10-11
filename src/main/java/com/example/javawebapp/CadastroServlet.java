@@ -36,10 +36,6 @@ public class CadastroServlet extends HttpServlet {
         String cep = req.getParameter("cep");
         String termos = req.getParameter("termos");
         ArrayList<String> erros = new ArrayList<String>();        
-        boolean verificarMinuscula = false;
-        boolean verificarMaiuscula = false;
-        boolean verificarNumero = false;
-        boolean verificarEscpecial = false;
 
 
         if (nome.isBlank() || nome.isEmpty()){
@@ -60,35 +56,49 @@ public class CadastroServlet extends HttpServlet {
         if (!email.contains("@")){
             erros.add("O email deve ser válido.");
         }
-        char[] caracteresSenha = senha.toCharArray();
-        for (char c : caracteresSenha) {
-            if (Character.isUpperCase(c)){
-                verificarMaiuscula = true;
+
+        if(senha != null){
+            boolean verificarMinuscula = false;
+            boolean verificarMaiuscula = false;
+            boolean verificarNumero = false;
+            boolean verificarEspecial = false;
+
+            char[] caracteresSenha = senha.toCharArray();
+            for (char c : caracteresSenha) {
+                if (Character.isUpperCase(c)){
+                    verificarMaiuscula = true;
+                }
+                if (Character.isLowerCase(c)) {
+                    verificarMinuscula = true;
+                }
+                if (Character.isDigit(c)){
+                    verificarNumero = true;
+                }
             }
-            if (Character.isLowerCase(c)) {
-                verificarMinuscula = true;
+
+            if(senha.contains("@$!%*#?&+-")){
+                verificarEspecial = true;
             }
-            if (Character.isDigit(c)){
-                verificarNumero = true;
+
+            if(!verificarEspecial){
+                erros.add("Sua senha deve ter pelo menos um dos caracteres especiais");
             }
-        }
-        if(senha.contains("@$!%*#?&+-")){
-            verificarEscpecial = true;
-        }
-        if(verificarEscpecial == false){
-            erros.add("Sua senha deve ter pelo menos um dos caracteres especiais");
-        }
-        if(verificarMaiuscula == false){
-            erros.add("Sua senha deve ter pelo menos um dos caracteres em maiusculo");
-        }
-        if(verificarMinuscula == false){
-            erros.add("Sua senha deve ter pelo menos um dos caracteres em minusculo");
-        }
-        if(verificarNumero == false){
-            erros.add("Sua senha deve ter pelo menos um número");
-        }
-        if(senha.length() < 8){
-            erros.add("A senha deve ter no mínimo 8 caracteres");
+
+            if(!verificarMaiuscula){
+                erros.add("Sua senha deve ter pelo menos um dos caracteres em maiusculo");
+            }
+
+            if(!verificarMinuscula){
+                erros.add("Sua senha deve ter pelo menos um dos caracteres em minusculo");
+            }
+
+            if(!verificarNumero){
+                erros.add("Sua senha deve ter pelo menos um número");
+            }
+
+            if(senha.length() < 8){
+                erros.add("A senha deve ter no mínimo 8 caracteres");
+            }
         }
         if (email.isBlank() || email.isEmpty()){
             erros.add("O email não pode estar vazio.");
@@ -112,24 +122,23 @@ public class CadastroServlet extends HttpServlet {
             erros.add("O CEP não pode estar vazio.");
         }
 
-        if(erros.isEmpty()){
-            res.s
+        if (erros.isEmpty()) {
+            res.sendRedirect("index.jsp");
+        } else {
+            req.setAttribute("nome", nome);
+            req.setAttribute("sobrenome", sobrenome);   
+            req.setAttribute("username", username);  
+            req.setAttribute("senha", senha);
+            req.setAttribute("confirmar", confirmar);
+            req.setAttribute("email", email);
+            req.setAttribute("telefone", telefone);
+            req.setAttribute("endereco", endereco);
+            req.setAttribute("estado", estado);
+            req.setAttribute("cidade", cidade);
+            req.setAttribute("cep", cep);
+            req.setAttribute("termos", termos);
+            req.setAttribute("erros", erros);
+            req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
-
-
-        System.out.println(nome);
-        System.out.println(sobrenome);   
-        System.out.println(username);  
-        System.out.println(senha);
-        System.out.println(confirmar);
-        System.out.println(email);
-        System.out.println(telefone);
-        System.out.println(endereco);
-        System.out.println(estado);
-        System.out.println(cidade);
-        System.out.println(cep);
-        System.out.println(termos);
-
-    
     }
 }
