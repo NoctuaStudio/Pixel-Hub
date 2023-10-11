@@ -3,9 +3,7 @@ package com.example.javawebapp;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.example.javawebapp.Validacao.EmailValidator;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,7 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private static final String regex = "^(.+)@(.+)$";
+    
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -33,18 +31,40 @@ public class LoginServlet extends HttpServlet {
 
         ArrayList<String> erros = new ArrayList();
 
+        boolean verificarMinuscula = false;
+        boolean verificarMaiuscula = false;
+        boolean verificarNumero = false;
+        boolean verificarEspecial = false;
+
+
         if(email.isBlank() || email == null){
             erros.add("O email não pode ser vazio");
         }else{
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(email);
-            if(!matcher.matches()){
+            if(!EmailValidator.isValid(email)){
                 erros.add("Email inválido");
             }
         }
 
         if(senha.isBlank() || senha == null){
             erros.add("A senha não pode ser vazia");
+        }
+        char[] caracteresSenha = senha.toCharArray();
+        for (char c : caracteresSenha) {
+            if (Character.isUpperCase(c)){
+                verificarMaiuscula = true;
+            }
+            if (Character.isLowerCase(c)) {
+                verificarMinuscula = true;
+            }
+            if (Character.isDigit(c)){
+                verificarNumero = true;
+            }
+        }
+        if(senha.contains("@$!%*#?&+-")){
+            verificarEspecial = true;
+        }
+        if(senha.length() < 8 || !verificarMaiuscula || !verificarMinuscula || !verificarEspecial || !verificarNumero){
+            erros.add("Senha inválida");
         }
         
 
