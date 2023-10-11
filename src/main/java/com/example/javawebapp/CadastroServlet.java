@@ -52,8 +52,15 @@ public class CadastroServlet extends HttpServlet {
 
         Boolean[] errosSenha = cadastro.getErrosSenha();
 
+
+        
+
         ArrayList<String> erros = new ArrayList<String>();
         erros = cadastro.getErros();
+
+
+
+
 
         if (erros.isEmpty()) {
             res.sendRedirect("login.jsp");

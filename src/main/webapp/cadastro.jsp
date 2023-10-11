@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.Date" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.Date, import " %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -149,6 +149,10 @@
                 <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="400px"
                     height="300px">
             </div>
+
+
+
+
                 <c:if test="${erros != null}">
                     <div style="display: flex; justify-content: center; margin: 20px;">
                         <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
@@ -160,6 +164,10 @@
                         </div>
                     </div>
                 </c:if>
+
+
+
+
             <div style="display: flex; justify-content: center; ">
                 <div class="col-md-10 col-lg-8 rounded-4 shadow" style="border: 1px solid black;  background-color: white;">
                     <div style="background-color: white;"></div>
