@@ -1,5 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -140,7 +138,7 @@
             <a class="nav-link" href="#">Acessórios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pré-Vendas</a>
+            <a class="nav-link" href="login.html">Pré-Vendas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="suporte.html">Suporte</a>
@@ -291,7 +289,7 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Jogos</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vendas</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre</a></li>
-        <li class="nav-item"><a href="suporte.html" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+        <li class="nav-item"><a href="java-web-app-1.0/suporte" class="nav-link px-2 text-body-secondary">Suporte</a></li>
       </ul>
     </footer>
   </div>
