@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validacao {
-private ArrayList erros = new ArrayList<String>();
+private ArrayList<String> erros = new ArrayList<String>();
 
     public ArrayList getErros() {
     return erros;
@@ -17,10 +17,16 @@ private ArrayList erros = new ArrayList<String>();
         }        
     }
 
-    private static final String regex = "^(.+)@(.+)$";
+    public void validarEmail(String email) {
+        
+        if (!emailIsValid(email)) {
+            erros.add("O email é inválido.");
+        }    
+    }
+
 
     public static boolean emailIsValid(String email) {
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile("^(.+)@(.+)$");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }    
