@@ -3,8 +3,6 @@ package com.example.javawebapp;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.example.javawebapp.Validacao.EmailValidator;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -40,7 +38,7 @@ public class LoginServlet extends HttpServlet {
         if(email.isBlank() || email == null){
             erros.add("O email não pode ser vazio");
         }else{
-            if(!EmailValidator.isValid(email)){
+            if(!Validacao.emailIsValid(email)){
                 erros.add("Email inválido");
             }
         }
@@ -67,7 +65,14 @@ public class LoginServlet extends HttpServlet {
             erros.add("Senha inválida");
         }
         
-
+        if(erros.isEmpty()){
+            res.sendRedirect("index.jsp");
+        }else{
+            req.setAttribute("email", email);
+            req.setAttribute("senha", senha);
+            req.setAttribute("erros", erros);
+            req.getRequestDispatcher("login.jsp").forward(req, res);
+        }
         // salvar no banco de dados
         // enviar um email para o admin com a mensagem
       
