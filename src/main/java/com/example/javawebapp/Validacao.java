@@ -6,14 +6,14 @@ import java.util.regex.Pattern;
 
 public class Validacao {
 private ArrayList<String> erros = new ArrayList<String>();
-private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
-
+//private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
+private Boolean[] errosSenha = new Boolean[5];
 
     public ArrayList getErros() {
     return erros;
     }
 
-    public ArrayList getErrosSenha() {
+    public Boolean[] getErrosSenha() {
         return errosSenha;
         }
 
@@ -119,11 +119,11 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
             erros.add("Senha inválida");
         }
 
-        errosSenha.add(verificarMaiuscula);
-        errosSenha.add(verificarMinuscula);
-        errosSenha.add(verificarNumero);
-        errosSenha.add(verificarEspecial);
-        errosSenha.add(verificarTamanho); 
+        errosSenha[0] = verificarMaiuscula;
+        errosSenha[1] = verificarMinuscula;
+        errosSenha[2] = verificarNumero;
+        errosSenha[3] = verificarEspecial;
+        errosSenha[4] = verificarTamanho; 
     }
 
     public void validarCep (String cep){
