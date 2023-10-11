@@ -149,16 +149,14 @@
                 <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="400px"
                     height="300px">
             </div>
-                <c:if test="${erros == null}">
-                    <div style="display: flex; justify-content: center; ">
-                        <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black;  background-color: white;">
-                            <div style="background-color: white;"></div>
-                                <h3>Erros no formulário</h2>
-                                <ul>
-                                    <c:forEach var="erro" items="${erros}">
-                                    <li>${erro}</li>
-                                    </c:forEach>
-                                </ul>
+                <c:if test="${erros != null}">
+                    <div style="display: flex; justify-content: center; margin: 20px;">
+                        <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
+                            <ul style="text-decoration: none;">
+                                <c:forEach var="erro" items="${erros}">
+                                <li>${erro}</li>
+                                </c:forEach>
+                            </ul>
                         </div>
                     </div>
                 </c:if>
@@ -238,11 +236,30 @@
                                             <span> Sua senha deve ter ao menos:</span>
                                             <br><br>
                                             <ul class="form-label">
-                                                <li><p class="password-rule-2">Uma letra maiúscula</p></li>
-                                                <li><p class="password-rule-3">Uma letra minúscula</p></li>
+                                                <c:choose>
+                                                    <c:when test="${errosSenha[0]}">
+                                                        <li><p class="password-rule-2" style="color: green">Uma letra maiúscula</p></li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:if test="${!errosSenha[0]}">
+                                                            <li><p class="password-rule-2" style="color: red">Uma letra maiúscula</p></li>
+                                                        </c:if>
+                                                        <li><p class="password-rule-2">Uma letra maiúscula</p></li>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <c:choose>
+                                                    <c:when test="${errosSenha[1] == null}">
+                                                        <li><p class="password-rule-2" style="color: green">Uma letra minúscula</p></li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:if test="${!errosSenha[1]}">
+                                                            <li><p class="password-rule-2" style="color: red">Uma letra minúscula</p></li>
+                                                        </c:if>
+                                                        <li><p class="password-rule-3">Uma letra minúscula</p></li>
+                                                    </c:otherwise>
+                                                </c:choose>
                                                 <li><p class="password-rule-4">Um número</p></li>
-                                                <li><p class="password-rule-5">Um caracter especial</p></li>
-                                                <li><p class="password-rule-6">Caracteres permitidos: A-z0-9@$!%*#?&+-</p></li>
+                                                <li><p class="password-rule-5">Um desses caracteres especiais: @$!%*#?&+-</p></li>
                                                 <li><p class="password-rule-1">Entre 8 a 30 caracteres</p></li>
                                             </ul>
                                         </div>
