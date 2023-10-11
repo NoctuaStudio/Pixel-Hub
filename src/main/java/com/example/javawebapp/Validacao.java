@@ -6,18 +6,17 @@ import java.util.regex.Pattern;
 
 public class Validacao {
 private ArrayList<String> erros = new ArrayList<String>();
-private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
-
+private Boolean[] errosSenha = new Boolean[5];
 
     public ArrayList getErros() {
     return erros;
     }
 
-    public ArrayList getErrosSenha() {
+    public Boolean[] getErrosSenha() {
         return errosSenha;
         }
 
-        
+
     public void validarNome(String nome) {
         if (nome.isBlank() || nome.isEmpty()){
             erros.add("O nome não pode estar vazio.");
@@ -39,6 +38,30 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
     public void confirmarSenha(String senha, String confirmar){
         if(senha != confirmar){
             erros.add("As senhas devem ser iguais.");
+        }
+    }
+
+    public void validarTelefone(String telefone){
+        if (telefone.isBlank() || telefone.isEmpty()){
+            erros.add("O telefone não pode estar vazio.");
+        }
+    }
+
+    public void validarEndereco(String endereco){
+        if (endereco.isBlank() || endereco.isEmpty()){
+            erros.add("O endereço não pode estar vazio.");
+        }
+    }
+
+    public void validarEstado(String estado){
+        if (estado.isBlank() || estado.isEmpty()){
+            erros.add("O Estado não pode estar vazio.");
+        }
+    }
+
+    public void validarCidade(String cidade){
+        if (cidade.isBlank() || cidade.isEmpty()){
+            erros.add("A Cidade não pode estar vazia.");
         }
     }
 
@@ -95,10 +118,22 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
             erros.add("Senha inválida");
         }
 
-        errosSenha.add(verificarMaiuscula);
-        errosSenha.add(verificarMinuscula);
-        errosSenha.add(verificarNumero);
-        errosSenha.add(verificarEspecial);
-        errosSenha.add(verificarTamanho); 
+        errosSenha[0] = verificarMaiuscula;
+        errosSenha[1] = verificarMinuscula;
+        errosSenha[2] = verificarNumero;
+        errosSenha[3] = verificarEspecial;
+        errosSenha[4] = verificarTamanho; 
+    }
+
+    public void validarCep (String cep){
+         //Método que valida o Cep
+        
+             if (cep.length() == 8)
+             {
+                 cep = cep.substring(0, 5) + "-" + cep.substring(5, 3);
+                 //txt.Text = cep;
+             }
+            //return System.Text.RegularExpressions.Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
+         
     }
 }

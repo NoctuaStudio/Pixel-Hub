@@ -36,80 +36,24 @@ public class CadastroServlet extends HttpServlet {
         String cep = req.getParameter("cep");
         String termos = req.getParameter("termos");
 
-        ArrayList<String> erros = new ArrayList<String>(); 
-        ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
 
         Validacao cadastro = new Validacao(); 
         cadastro.validarNome(nome);
         cadastro.validarSobrenome(sobrenome);
         cadastro.validarUsername(username);
-
+        cadastro.validarSenha(senha);
         cadastro.confirmarSenha(senha, confirmar);
         cadastro.validarEmail(email);
+        cadastro.validarTelefone(telefone);
+        cadastro.validarEndereco(endereco);
+        cadastro.validarEstado(estado);
+        cadastro.validarCidade(cidade);
 
-        if (senha.isBlank() || senha.isEmpty() || confirmar.isBlank() || confirmar.isEmpty()){
-            erros.add("A senha não pode estar vazia.");
-        }
+        Boolean[] errosSenha = cadastro.getErrosSenha();
 
-        if(senha != null){
-            boolean verificarMinuscula = false;
-            boolean verificarMaiuscula = false;
-            boolean verificarNumero = false;
-            boolean verificarEspecial = false;
+        ArrayList<String> erros = new ArrayList<String>(); 
+        erros = cadastro.getErros();
 
-            char[] caracteresSenha = senha.toCharArray();
-            for (char c : caracteresSenha) {
-                if (Character.isUpperCase(c)){
-                    verificarMaiuscula = true;
-                }
-                if (Character.isLowerCase(c)) {
-                    verificarMinuscula = true;
-                }
-                if (Character.isDigit(c)){
-                    verificarNumero = true;
-                }
-            }
-
-            if(senha.contains("@$!%*#?&+-")){
-                verificarEspecial = true;
-            }
-
-            if(!verificarEspecial){
-                erros.add("Sua senha deve ter pelo menos um dos caracteres especiais");
-            }
-
-            if(!verificarMaiuscula){
-                erros.add("Sua senha deve ter pelo menos um dos caracteres em maiusculo");
-            }
-
-            if(!verificarMinuscula){
-                erros.add("Sua senha deve ter pelo menos um dos caracteres em minusculo");
-            }
-
-            if(!verificarNumero){
-                erros.add("Sua senha deve ter pelo menos um número");
-            }
-
-            if(senha.length() < 8){
-                erros.add("A senha deve ter no mínimo 8 caracteres");
-            }
-        }
-        
-        if (telefone.isBlank() || telefone.isEmpty()){
-            erros.add("O telefone não pode estar vazio.");
-        }
-        if (endereco.isBlank() || endereco.isEmpty()){
-            erros.add("O endereço não pode estar vazio.");
-        }
-        if (estado.isBlank() || estado.isEmpty()){
-            erros.add("O Estado não pode estar vazio.");
-        }
-        if (estado.isBlank() || estado.isEmpty()){
-            erros.add("O Estado não pode estar vazio.");
-        }
-        if (cidade.isBlank() || cidade.isEmpty()){
-            erros.add("A Cidade não pode estar vazia.");
-        }
         if (cep.isBlank() || cep.isEmpty()){
             erros.add("O CEP não pode estar vazio.");
         }
@@ -130,6 +74,7 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("cep", cep);
             req.setAttribute("termos", termos);
             req.setAttribute("erros", erros);
+            req.setAttribute("errosSenha", errosSenha);
             req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
     }

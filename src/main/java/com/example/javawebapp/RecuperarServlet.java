@@ -24,10 +24,12 @@ public class RecuperarServlet extends HttpServlet {
         
         String novaSenha = req.getParameter("novaSenha");
         String confirmarSenha = req.getParameter("confirmarSenha");
+        
+        Validacao recuperar = new Validacao();
+        recuperar.validarSenha(novaSenha);
+        recuperar.confirmarSenha(novaSenha, confirmarSenha);
        
-       
-        System.out.println(novaSenha);
-        System.out.println(confirmarSenha);
+        
 
     }
 
