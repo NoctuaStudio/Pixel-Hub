@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -166,6 +167,17 @@
 
 <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 5%;">
   <div class="modal-dialog" role="document">
+    <c:if test="${erros != null}">
+        <div style="display: flex; justify-content: center; margin: 20px;">
+            <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
+                <ul style="margin: 20px;">
+                    <c:forEach var="erro" items="${erros}">
+                    <li>${erro}</li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </div>
+    </c:if>
     <div class="modal-content rounded-4 shadow">
       <div class="py-1 text-center" style="padding: 0;">
         <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="250px"
@@ -179,11 +191,11 @@
         <div class="modal-body p-5 pt-0">
           <form class="" action="login" method="post" >
             <div class="form-floating mb-3">
-              <input type="email" name="email" class="form-control rounded-3" id="floatingInput" placeholder="nome@exemplo.com">
+              <input type="email" name="email" class="form-control rounded-3" id="floatingInput" value="${email}" placeholder="nome@exemplo.com">
               <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" name="senha" class="form-control rounded-3" id="floatingPassword" placeholder="Senha">
+              <input type="password" name="senha" class="form-control rounded-3" id="floatingPassword" value="${senha}" placeholder="Senha">
               <label for="floatingPassword">Senha</label>
             </div>
             <div>

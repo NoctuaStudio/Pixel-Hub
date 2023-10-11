@@ -371,9 +371,9 @@
                                       <input type="checkbox" value="Termos Aceitos" name="termos"  required> Aceito os <b><a href="termos.html">Termos de Uso</a></b>.*
                                     </label>
                                   </div>
-                                  <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar">  <a href="login.html" style = "text-decoration: none; color: white;">Cadastrar-se </a></button> 
+                                  <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar">  <a href="login.jsp" style = "text-decoration: none; color: white;">Cadastrar-se </a></button> 
                                 <div style="display: flex; justify-content: center; margin-bottom: -5%; margin-top: 2%;">
-                                    <h2 class="fs-5 fw-bold mb-3"> Já tem uma conta? <a href="login.html">  Clique aqui!</a></h2>
+                                    <h2 class="fs-5 fw-bold mb-3"> Já tem uma conta? <a href="login.jsp">  Clique aqui!</a></h2>
                                 </div>
                             </form>
                 </div>
