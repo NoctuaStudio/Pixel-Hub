@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -149,6 +149,19 @@
                 <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="400px"
                     height="300px">
             </div>
+                <c:if test="${erros == null}">
+                    <div style="display: flex; justify-content: center; ">
+                        <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black;  background-color: white;">
+                            <div style="background-color: white;"></div>
+                                <h3>Erros no formulário</h2>
+                                <ul>
+                                    <c:forEach var="erro" items="${erros}">
+                                    <li>${erro}</li>
+                                    </c:forEach>
+                                </ul>
+                        </div>
+                    </div>
+                </c:if>
             <div style="display: flex; justify-content: center; ">
                 <div class="col-md-10 col-lg-8 rounded-4 shadow" style="border: 1px solid black;  background-color: white;">
                     <div style="background-color: white;"></div>
