@@ -193,10 +193,10 @@
             </div>
             <button name="login" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"><a href="index.jsp" style="text-decoration: none; color: white;"> Login </a></button>
             <div style="justify-content: center; display: flex; margin-bottom: -4%; margin-top: 2%;">
-              <p> <a href="recuperar.html">Esqueci minha senha</a></p>
+              <p> <a href="recuperar.jsp">Esqueci minha senha</a></p>
             </div>
             <hr class="my-4">
-            <h2 class="fs-5 fw-bold mb-3"> Não é cadastrado? <a href="cadastro.html">  Faça o cadastro aqui!</a></h2>
+            <h2 class="fs-5 fw-bold mb-3"> Não é cadastrado? <a href="cadastro.jsp">  Faça o cadastro aqui!</a></h2>
           </form>
         </div>
       </div>
