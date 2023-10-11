@@ -237,30 +237,60 @@
                                             <br><br>
                                             <ul class="form-label">
                                                 <c:choose>
-                                                    <c:when test="${errosSenha[0]}">
-                                                        <li><p class="password-rule-2" style="color: green">Uma letra maiúscula</p></li>
+                                                    <c:when test="${errosSenha[0] == null}">
+                                                        <li><p class="password-rule-2">Uma letra maiúscula</p></li>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <c:if test="${!errosSenha[0]}">
                                                             <li><p class="password-rule-2" style="color: red">Uma letra maiúscula</p></li>
                                                         </c:if>
-                                                        <li><p class="password-rule-2">Uma letra maiúscula</p></li>
+                                                        <li><p class="password-rule-2" style="color: green">Uma letra maiúscula</p></li>
                                                     </c:otherwise>
                                                 </c:choose>
                                                 <c:choose>
                                                     <c:when test="${errosSenha[1] == null}">
-                                                        <li><p class="password-rule-2" style="color: green">Uma letra minúscula</p></li>
+                                                        <li><p class="password-rule-2">Uma letra minúscula</p></li>
                                                     </c:when>
                                                     <c:otherwise>
                                                         <c:if test="${!errosSenha[1]}">
                                                             <li><p class="password-rule-2" style="color: red">Uma letra minúscula</p></li>
                                                         </c:if>
-                                                        <li><p class="password-rule-3">Uma letra minúscula</p></li>
+                                                        <li><p class="password-rule-3" style="color: green">Uma letra minúscula</p></li>
                                                     </c:otherwise>
                                                 </c:choose>
-                                                <li><p class="password-rule-4">Um número</p></li>
-                                                <li><p class="password-rule-5">Um desses caracteres especiais: @$!%*#?&+-</p></li>
-                                                <li><p class="password-rule-1">Entre 8 a 30 caracteres</p></li>
+                                                <c:choose>
+                                                    <c:when test="${errosSenha[2] == null}">
+                                                        <li><p class="password-rule-2">Um número</p></li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:if test="${!errosSenha[2]}">
+                                                            <li><p class="password-rule-2" style="color: red">Um número</p></li>
+                                                        </c:if>
+                                                        <li><p class="password-rule-3" style="color: green">Um número</p></li>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <c:choose>
+                                                    <c:when test="${errosSenha[3] == null}">
+                                                        <li><p class="password-rule-2">Um desses caracteres especiais: @$!%*#?&+-</p></li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:if test="${!errosSenha[3]}">
+                                                            <li><p class="password-rule-2" style="color: red">Um desses caracteres especiais: @$!%*#?&+-</p></li>
+                                                        </c:if>
+                                                        <li><p class="password-rule-3" style="color: green">Um desses caracteres especiais: @$!%*#?&+-</p></li>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                                <c:choose>
+                                                    <c:when test="${errosSenha[4] == null}">
+                                                        <li><p class="password-rule-2">Entre 8 a 30 caracteres</p></li>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:if test="${!errosSenha[4]}">
+                                                            <li><p class="password-rule-2" style="color: red">Entre 8 a 30 caracteres</p></li>
+                                                        </c:if>
+                                                        <li><p class="password-rule-3" style="color: green">Entre 8 a 30 caracteres</p></li>
+                                                    </c:otherwise>
+                                                </c:choose>
                                             </ul>
                                         </div>
                                     </div>
