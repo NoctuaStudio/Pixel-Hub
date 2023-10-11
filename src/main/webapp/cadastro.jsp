@@ -149,10 +149,7 @@
                 <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="400px"
                     height="300px">
             </div>
-            <% String[] erros = new String[1]
-                erros[0] = "erro"
-            %>
-                <c:if test="${erros != null}">
+                <c:if test="${erros == null}">
                     <div style="display: flex; justify-content: center; ">
                         <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black;  background-color: white;">
                             <div style="background-color: white;"></div>
