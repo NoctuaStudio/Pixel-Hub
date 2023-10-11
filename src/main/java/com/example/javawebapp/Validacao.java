@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 public class Validacao {
 private ArrayList<String> erros = new ArrayList<String>();
-//private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
 private Boolean[] errosSenha = new Boolean[5];
 
     public ArrayList getErros() {
