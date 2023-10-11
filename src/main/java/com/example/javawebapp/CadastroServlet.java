@@ -37,6 +37,7 @@ public class CadastroServlet extends HttpServlet {
         String termos = req.getParameter("termos");
 
         ArrayList<String> erros = new ArrayList<String>(); 
+        ArrayList<Boolean> errosSenha = new ArrayList<Boolean>(); 
 
         Validacao cadastro = new Validacao(); 
         cadastro.validarNome(nome);
