@@ -42,6 +42,30 @@ private ArrayList<Boolean> errosSenha = new ArrayList<Boolean>();
         }
     }
 
+    public void validarTelefone(String telefone){
+        if (telefone.isBlank() || telefone.isEmpty()){
+            erros.add("O telefone não pode estar vazio.");
+        }
+    }
+
+    public void validarEndereco(String endereco){
+        if (endereco.isBlank() || endereco.isEmpty()){
+            erros.add("O endereço não pode estar vazio.");
+        }
+    }
+
+    public void validarEstado(String estado){
+        if (estado.isBlank() || estado.isEmpty()){
+            erros.add("O Estado não pode estar vazio.");
+        }
+    }
+
+    public void validarCidade(String cidade){
+        if (cidade.isBlank() || cidade.isEmpty()){
+            erros.add("A Cidade não pode estar vazia.");
+        }
+    }
+
     public void validarEmail(String email) {
         if(email.isBlank() || email == null){
             erros.add("O email não pode ser vazio");
