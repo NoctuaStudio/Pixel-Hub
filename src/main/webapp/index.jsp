@@ -138,10 +138,10 @@
             <a class="nav-link" href="#">Acessórios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Pré-Vendas</a>
+            <a class="nav-link" href="login.jsp">Pré-Vendas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="suporte.html">Suporte</a>
+            <a class="nav-link" href="suporte.jsp">Suporte</a>
           </li>
         </ul>
         <form class="d-flex w-25" role="search" style="margin-right: 15%;">
@@ -155,8 +155,8 @@
             </div>
         </form>
         <div style="margin-right: 2%;">
-          <button type="button" class="btn btn-outline-primary me-2"><a href="login.html" style="text-decoration: none;">Login</a></button>
-          <button type="button" class="btn btn-primary"><a href="cadastro.html" style="text-decoration: none; color: white;">Cadastrar</a></button>
+          <button type="button" class="btn btn-outline-primary me-2"><a href="login.jsp" style="text-decoration: none;">Login</a></button>
+          <button type="button" class="btn btn-primary"><a href="cadastro.jsp" style="text-decoration: none; color: white;">Cadastrar</a></button>
         </div>
       </div>
     </div>
@@ -289,7 +289,7 @@
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Jogos</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vendas</a></li>
         <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Sobre</a></li>
-        <li class="nav-item"><a href="java-web-app-1.0/suporte" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+        <li class="nav-item"><a href="java-web-app-1.0/suporte.jsp" class="nav-link px-2 text-body-secondary">Suporte</a></li>
       </ul>
     </footer>
   </div>
