@@ -1,6 +1,11 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,13 +22,32 @@ import jakarta.servlet.http.HttpServletResponse;
 // e definir o comportamento
 
 @WebServlet(name = "login", value = "/login")
-public class LoginServlet extends HttpServlet {   
+public class LoginServlet extends HttpServlet {
+    private static final String regex = "^(.+)@(.+)$";
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
         String continuarConectado = req.getParameter("ContinuarConectado");
+
+        ArrayList<String> erros = new ArrayList();
+
+        if(email.isBlank() || email == null){
+            erros.add("O email não pode ser vazio");
+        }else{
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(email);
+            if(!matcher.matches()){
+                erros.add("Email inválido");
+            }
+        }
+
+        if(senha.isBlank() || senha == null){
+            erros.add("A senha não pode ser vazia");
+        }
+        
+
         // salvar no banco de dados
         // enviar um email para o admin com a mensagem
       
