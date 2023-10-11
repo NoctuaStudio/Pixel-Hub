@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
+
 // 1. criar uma classe em java
 // 2. extends HttpServlet
 // 3. "roteamento" anotar a classe com @WebServlet definir
@@ -23,9 +24,20 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
+
+
+
+
+
         String email = req.getParameter("email");
         String senha = req.getParameter("senha");
         String continuarConectado = req.getParameter("ContinuarConectado");
+
+
+        Validacao login = new Validacao();
+        login.validarEmail(email);
+
 
         ArrayList<String> erros = new ArrayList();
 
@@ -38,10 +50,8 @@ public class LoginServlet extends HttpServlet {
         if(email.isBlank() || email == null){
             erros.add("O email não pode ser vazio");
         }else{
-            if(!Validacao.emailIsValid(email)){
-                erros.add("Email inválido");
-            }
-        }
+
+                }
 
         if(senha.isBlank() || senha == null){
             erros.add("A senha não pode ser vazia");

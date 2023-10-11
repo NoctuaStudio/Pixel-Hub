@@ -25,7 +25,7 @@ private ArrayList<String> erros = new ArrayList<String>();
     }
 
 
-    public static boolean emailIsValid(String email) {
+    public boolean emailIsValid(String email) {
         Pattern pattern = Pattern.compile("^(.+)@(.+)$");
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
