@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 // 1. criar uma classe em java
 // 2. extends HttpServlet
 // 3. "roteamento" anotar a classe com @WebServlet definir
@@ -18,14 +17,14 @@ import jakarta.servlet.http.HttpServletResponse;
 // e definir o comportamento
 
 @WebServlet(name = "cadastro", value = "/cadastro")
-public class CadastroServlet extends HttpServlet {   
+public class CadastroServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        
-        String nome = req.getParameter("nome");  
+
+        String nome = req.getParameter("nome");
         String sobrenome = req.getParameter("sobrenome");
-        String username = req.getParameter("username"); 
+        String username = req.getParameter("username");
         String senha = req.getParameter("senha");
         String confirmar = req.getParameter("confirmar");
         String email = req.getParameter("email");
@@ -36,8 +35,20 @@ public class CadastroServlet extends HttpServlet {
         String cep = req.getParameter("cep");
         String termos = req.getParameter("termos");
 
+        System.out.println("Nome: " + nome);
+        System.out.println("Sobrenome: " + sobrenome);
+        System.out.println("Username: " + username);
+        System.out.println("Senha: " + senha);
+        System.out.println("Confirmar: " + confirmar);
+        System.out.println("Email: " + email);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+        System.out.println("Estado: " + estado);
+        System.out.println("Cidade: " + cidade);
+        System.out.println("Cep: " + cep);
+        System.out.println("Termos: " + termos);
 
-        Validacao cadastro = new Validacao(); 
+        Validacao cadastro = new Validacao();
         cadastro.validarNome(nome);
         cadastro.validarSobrenome(sobrenome);
         cadastro.validarUsername(username);
@@ -52,22 +63,15 @@ public class CadastroServlet extends HttpServlet {
 
         Boolean[] errosSenha = cadastro.getErrosSenha();
 
-
-        
-
         ArrayList<String> erros = new ArrayList<String>();
         erros = cadastro.getErros();
-
-
-
-
 
         if (erros.isEmpty()) {
             res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
-            req.setAttribute("sobrenome", sobrenome);   
-            req.setAttribute("username", username);  
+            req.setAttribute("sobrenome", sobrenome);
+            req.setAttribute("username", username);
             req.setAttribute("senha", senha);
             req.setAttribute("confirmar", confirmar);
             req.setAttribute("email", email);

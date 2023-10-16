@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.Date, import " %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" import="java.util.Date" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -11,9 +11,7 @@
     <title> Cadastro </title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="icon" href="imagem/icone.png">
 
 
@@ -206,17 +204,20 @@
                                     <div class="col-12">
                                         <label for="senha" class="form-label">Senha*</label>
                                         <div class="input-group has-validation">
-                                            <span class="input-group-text" class="senhaVisibilidade">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                                            <span class="input-group-text senhaVisibilidade" onclick="mostrarOcultarSenha()" >
+                                                <svg id="eye-dismissed1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
                                                     <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
                                                     <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
                                                     <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
                                                 </svg>
+                                                <svg id="eye-vissible1" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                                </svg>
                                             </span>
-                                            <input type="password" class="form-control" id="senha" name="senha" value="${senha}"
-                                                required>
+                                            <input type="password" class="form-control" id="senha" name="senha" value="${senha}" required>
                                             <div class="invalid-feedback">
-                                                Your username is required.
+                                                Sua senha é obrigatória.
                                             </div>
                                         </div>
                                     </div>
@@ -224,11 +225,15 @@
                                     <div class="col-12">
                                         <label for="confirmar" class="form-label">Confirmar senha*</label>
                                         <div class="input-group has-validation">
-                                            <span class="input-group-text" class="senhaVisibilidade">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                                            <span class="input-group-text" class="senhaVisibilidade" onclick="mostrarOcultarConfirmarSenha()" >
+                                                <svg id="eye-dismissed2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
                                                     <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
                                                     <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
                                                     <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
+                                                </svg>
+                                                <svg id="eye-vissible2" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                                                 </svg>
                                             </span>
                                             <input type="password" class="form-control" id="confirmar" name="confirmar" value="${confirmar}"
@@ -402,18 +407,39 @@
         crossorigin="anonymous">
     </script>
     <script>
-        var senhaBotao = document.getElementsByName(".senhaVisibilidade");
 
-        function mudarVisibilidade() {
-        var x = document.getElementById("senha");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-        }
+        function mostrarOcultarConfirmarSenha() {
+            var senhaConfirmarInput = document.getElementById("confirmar");
+            var icon1 = document.getElementById("eye-dismissed2");
+            var icon2 = document.getElementById("eye-vissible2");
 
-        senhaBotao.forEach(elemento => elemento.addEventListener('click', mudarCor));
+            if (senhaConfirmarInput.type === "password") {
+                icon1.style.display = "none";
+                icon2.style.display = "block";
+                senhaConfirmarInput.type = "text";
+            } else if (senhaConfirmarInput.type === "text"){
+                icon1.style.display = "block";
+                icon2.style.display = "none";
+                senhaConfirmarInput.type = "password";
+            }
+
+        }    
+        function mostrarOcultarSenha() {
+            var senhaInput = document.getElementById("senha");
+            var icon1 = document.getElementById("eye-dismissed1");
+            var icon2 = document.getElementById("eye-vissible1");
+            
+
+            if (senhaInput.type === "password") {
+                icon1.style.display = "none";
+                icon2.style.display = "block";
+                senhaInput.type = "text";
+            } else if (senhaInput.type === "text") {
+                icon1.style.display = "block";
+                icon2.style.display = "none";
+                senhaInput.type = "password";
+            }
+        }
     </script>
 
     <script src="checkout.js"></script>
