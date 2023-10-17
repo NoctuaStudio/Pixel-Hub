@@ -174,9 +174,6 @@
                     <c:forEach var="erro" items="${erros}">
                     <li>${erro}</li>
                     </c:forEach>
-                    <c:forEach var="erro" items="${erroSenha}">
-                    <li>${erro}</li>
-                    </c:forEach>
                 </ul>
             </div>
         </div>
@@ -194,11 +191,11 @@
         <div class="modal-body p-5 pt-0">
           <form class="" action="login" method="post" >
             <div class="form-floating mb-3">
-              <input type="email" name="email" class="form-control rounded-3" id="floatingInput" value="${email}" placeholder="nome@exemplo.com">
+              <input required type="email" name="email" class="form-control rounded-3" id="floatingInput" value="${email}" placeholder="nome@exemplo.com">
               <label for="floatingInput">Email</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" name="senha" class="form-control rounded-3" id="floatingPassword" value="${senha}" placeholder="Senha">
+              <input required type="password" name="senha" class="form-control rounded-3" id="floatingPassword" value="${senha}" placeholder="Senha">
               <label for="floatingPassword">Senha</label>
             </div>
             <div>

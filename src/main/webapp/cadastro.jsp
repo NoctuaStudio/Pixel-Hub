@@ -347,10 +347,10 @@
 
                                     <div class="col-md-5">
                                         <label for="estado" class="form-label">Estado*</label>
-                                        <select class="form-select" id="estado" name="estado" value="${estado}" required>
-                                            <option value="">-</option>
-                                            <option>São Paulo</option>
-                                            <option>Minas-Gerais</option>
+                                        <select class="form-select" id="estado" name="estado" required>
+                                            <option>-</option>
+                                            <option <% if ("São Paulo".equals(request.getParameter("estado"))) out.print("selected"); %> >São Paulo</option>
+                                            <option <% if ("Minas-Gerais".equals(request.getParameter("estado"))) out.print("selected"); %>>Minas-Gerais</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Please select a valid country.
@@ -359,10 +359,10 @@
 
                                     <div class="col-md-4">
                                         <label for="cidade" class="form-label">Cidade*</label>
-                                        <select class="form-select" id="cidade" name="cidade" value="${cidade}" required>
-                                            <option value="">-</option>
-                                            <option>São Paulo</option>
-                                            <option>Belo Horizonte</option>
+                                        <select class="form-select" id="cidade" name="cidade" required>
+                                            <option>-</option>
+                                            <option <% if ("São Paulo".equals(request.getParameter("cidade"))) out.print("selected"); %>>São Paulo</option>
+                                            <option <% if ("Belo Horizonte".equals(request.getParameter("cidade"))) out.print("selected"); %>>Belo Horizonte</option>
                                         </select>
                                         <div class="invalid-feedback">
                                             Please provide a valid state.
@@ -381,10 +381,10 @@
                                 <hr class="my-4">
                                 <div>
                                     <label for="termos" style="margin-bottom: 10px;">
-                                      <input type="checkbox" value="Termos Aceitos" name="termos"  required> Aceito os <b><a href="termos.html">Termos de Uso</a></b>.*
+                                      <input type="checkbox" name="termos" checked required <% // if ("false".equals(request.getParameter("termos"))) out.print(" checked "); %> > Aceito os <b><a href="termos.html">Termos de Uso</a></b>.*
                                     </label>
                                   </div>
-                                  <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar">  <a href="login.jsp" style = "text-decoration: none; color: white;">Cadastrar-se </a></button> 
+                                  <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar">  Cadastrar-se </button> 
                                 <div style="display: flex; justify-content: center; margin-bottom: -5%; margin-top: 2%;">
                                     <h2 class="fs-5 fw-bold mb-3"> Já tem uma conta? <a href="login.jsp">  Clique aqui!</a></h2>
                                 </div>

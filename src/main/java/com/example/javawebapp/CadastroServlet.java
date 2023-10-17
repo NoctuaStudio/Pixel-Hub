@@ -33,9 +33,9 @@ public class CadastroServlet extends HttpServlet {
         String estado = req.getParameter("estado");
         String cidade = req.getParameter("cidade");
         String cep = req.getParameter("cep");
-        String termos = req.getParameter("termos");
+        Boolean termos = Boolean.parseBoolean(req.getParameter("termos"));
 
-        System.out.println("Nome: " + nome);
+        /*System.out.println("Nome: " + nome);
         System.out.println("Sobrenome: " + sobrenome);
         System.out.println("Username: " + username);
         System.out.println("Senha: " + senha);
@@ -45,7 +45,7 @@ public class CadastroServlet extends HttpServlet {
         System.out.println("Endereço: " + endereco);
         System.out.println("Estado: " + estado);
         System.out.println("Cidade: " + cidade);
-        System.out.println("Cep: " + cep);
+        System.out.println("Cep: " + cep);*/
         System.out.println("Termos: " + termos);
 
         Validacao cadastro = new Validacao();
@@ -61,12 +61,9 @@ public class CadastroServlet extends HttpServlet {
         cadastro.validarCidade(cidade);
         cadastro.validarCep(cep);
 
-        Boolean[] errosSenha = cadastro.getErrosSenha();
+               
 
-        ArrayList<String> erros = new ArrayList<String>();
-        erros = cadastro.getErros();
-
-        if (erros.isEmpty()) {
+        if (cadastro.getErros().isEmpty()) {
             res.sendRedirect("login.jsp");
         } else {
             req.setAttribute("nome", nome);
@@ -81,8 +78,8 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("cidade", cidade);
             req.setAttribute("cep", cep);
             req.setAttribute("termos", termos);
-            req.setAttribute("erros", erros);
-            req.setAttribute("errosSenha", errosSenha);
+            req.setAttribute("erros", cadastro.getErros());
+            req.setAttribute("errosSenha", cadastro.getErrosSenha());
             req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
     }
