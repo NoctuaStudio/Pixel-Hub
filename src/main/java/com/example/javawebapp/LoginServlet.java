@@ -1,14 +1,17 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.util.Set;
+
+import com.example.javawebapp.forms.LoginForm;
+import com.example.javawebapp.validators.ValidatorUtil;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-
+import jakarta.validation.ConstraintViolation;
 
 // 1. criar uma classe em java
 // 2. extends HttpServlet
@@ -19,7 +22,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {
-    
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -28,21 +30,21 @@ public class LoginServlet extends HttpServlet {
         String senha = req.getParameter("senha");
         String continuarConectado = req.getParameter("ContinuarConectado");
 
-        Validacao login = new Validacao();
-        login.validarEmail(email);
-        login.validarSenha(senha);
+        LoginForm loginForm = new LoginForm(email, senha, continuarConectado);
 
-        if(login.getErros().isEmpty()){
+        Set<ConstraintViolation<LoginForm>> violations = ValidatorUtil.validateObject(loginForm);
+
+        if (violations.isEmpty()) {
             res.sendRedirect("index.jsp");
-        }else{
+        } else {
             req.setAttribute("email", email);
             req.setAttribute("senha", senha);
             req.setAttribute("continuarConectado", continuarConectado);
-            req.setAttribute("erros", login.getErros());
+            req.setAttribute("violation", violations);
             req.getRequestDispatcher("login.jsp").forward(req, res);
         }
         // salvar no banco de dados
-        //fazer em todos os redirect    
+        // fazer em todos os redirect
 
     }
 

@@ -1,11 +1,9 @@
-package com.example.javawebapp.validators;
+package com.example.javawebapp;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
 import com.example.javawebapp.validators.ValidatorUtil;
-
-import com.example.javawebapp.Validacao;
 import com.example.javawebapp.forms.CadastroForm;
 
 import jakarta.servlet.ServletException;
@@ -45,37 +43,10 @@ public class CadastroServlet extends HttpServlet {
                 endereco, estado, cidade, cep, termos);
 
         Set<ConstraintViolation<CadastroForm>> violations = ValidatorUtil.validateObject(cadastroForm);
+        cadastroForm.validarSenha(senha, confirmar);
 
-        /*
-         * System.out.println("Nome: " + nome);
-         * System.out.println("Sobrenome: " + sobrenome);
-         * System.out.println("Username: " + username);
-         * System.out.println("Senha: " + senha);
-         * System.out.println("Confirmar: " + confirmar);
-         * System.out.println("Email: " + email);
-         * System.out.println("Telefone: " + telefone);
-         * System.out.println("Endereço: " + endereco);
-         * System.out.println("Estado: " + estado);
-         * System.out.println("Cidade: " + cidade);
-         * System.out.println("Cep: " + cep);
-         */
-        System.out.println("Termos: " + termos);
-
-        Validacao cadastro = new Validacao();
-        cadastro.validarNome(nome);
-        cadastro.validarSobrenome(sobrenome);
-        cadastro.validarUsername(username);
-        cadastro.validarSenha(senha);
-        cadastro.confirmarSenha(senha, confirmar);
-        cadastro.validarEmail(email);
-        cadastro.validarTelefone(telefone);
-        cadastro.validarEndereco(endereco);
-        cadastro.validarEstado(estado);
-        cadastro.validarCidade(cidade);
-        cadastro.validarCep(cep);
-
-        if (cadastro.getErros().isEmpty()) {
-            res.sendRedirect("login.jsp");
+        if (violations.isEmpty() && cadastroForm.getErros().isEmpty()) {
+            res.sendRedirect("principal.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("sobrenome", sobrenome);
@@ -89,8 +60,9 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("cidade", cidade);
             req.setAttribute("cep", cep);
             req.setAttribute("termos", termos);
-            req.setAttribute("erros", cadastro.getErros());
-            req.setAttribute("errosSenha", cadastro.getErrosSenha());
+            req.setAttribute("violations", violations);
+            req.setAttribute("erros", cadastroForm.getErros());
+            req.setAttribute("errosSenha", cadastroForm.getErrosSenha());
             req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
     }
