@@ -186,7 +186,7 @@
                                                 </c:when>
                                                 <c:otherwise>
                                                     <c:if test="${!errosSenha[3]}">
-                                                        <li><p class="password-rule-2" style="color: red"><fmt:message key="registration.confirmPasswordSpecial"" /></p></li>
+                                                        <li><p class="password-rule-2" style="color: red"><fmt:message key="registration.confirmPasswordSpecial" /></p></li>
                                                     </c:if>
                                                     <c:if test="${errosSenha[3]}">
                                                         <li><p class="password-rule-2" style="color: green"><fmt:message key="registration.confirmPasswordSpecial" /></p></li>
@@ -258,7 +258,7 @@
                             <hr class="my-4">
                             <div>
                                 <label for="termos" style="margin-bottom: 10px;">
-                                    <input type="checkbox" name="termos" checked required <% // if ("false".equals(request.getParameter("termos"))) out.print(" checked "); %> ><fmt:message key="registration.startTerms /><b><a href="termos.jsp"><fmt:message key="registration.terms" /></a></b>.*
+                                    <input type="checkbox" name="termos" checked required <% // if ("false".equals(request.getParameter("termos"))) out.print(" checked "); %>><fmt:message key="registration.startTerms" /><b><a href="termos.jsp"><fmt:message key="registration.terms" /></a></b>.*
                                 </label>
                                 </div>
                                 <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar"> <fmt:message key="registration.button" /> </button> 
