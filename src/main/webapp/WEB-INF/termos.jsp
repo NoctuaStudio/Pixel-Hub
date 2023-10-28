@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!doctype html>
 
   <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
@@ -7,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Termos de Uso</title>
+    <title><fmt:message key="terms.title" /></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -53,7 +55,7 @@
             </div>
             <div style="margin-top: -8%;" >
               <div class="modal-header p-5 pb-4 border-bottom-0"  style="display: flex; justify-content: center;">
-                <h1 class="fw-bold mb-0 fs-2">Termos de Uso</h1>
+                <h1 class="fw-bold mb-0 fs-2"><fmt:message key="terms.title" /></h1>
               </div>
               <div class="col-sm-12" style="border: solid 1px #dcdcdc; border-radius: 10px; width: 90%; padding:5%; margin-left: 5%;" >
                 <div style="padding: 10px;">

@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
@@ -9,7 +10,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Suporte</title>
+  <title><fmt:message key="support.title" /></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
   <link rel="icon" href="imagem/icone.png">
@@ -25,7 +26,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
         <img src="imagem/icone-branco.png" alt="" width="auto" height="50px" style="margin-right: 1%;"> <a
-          class="navbar-brand" href="index.jsp"> Pixel Hub</a>
+          class="navbar-brand" href="index"><fmt:message key="index.title" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
           aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Consoles</a>
+              <a class="nav-link" href="#"><fmt:message key="index.consoles" /></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Jogos</a>
@@ -45,7 +46,7 @@
               <a class="nav-link" href="#">Pré-Vendas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="suporte.html">Suporte</a>
+              <a class="nav-link" href="suporte"><fmt:message key="support.title" /></a>
             </li>
           </ul>
           <form class="d-flex w-25" role="search" style="margin-right: 15%;">
@@ -61,10 +62,10 @@
             </div>
           </form>
           <div style="margin-right: 2%;">
-            <button type="button" class="btn btn-outline-primary me-2"><a href="login.jsp"
-                style="text-decoration: none;">Login</a></button>
-            <button type="button" class="btn btn-primary"><a href="cadastro.jsp"
-                style="text-decoration: none; color: white;">Cadastrar</a></button>
+            <button type="button" class="btn btn-outline-primary me-2"><a href="login"
+                style="text-decoration: none;"><fmt:message key="login.title" /></a></button>
+            <button type="button" class="btn btn-primary"><a href="cadastro"
+                style="text-decoration: none; color: white;"><fmt:message key="registration.title" /></a></button>
           </div>
         </div>
       </div>
@@ -86,29 +87,29 @@
         </div>
     </c:if>
       <div style="padding: 7%;">
-        <h4 class="mb-3" style="margin-top: 15px;">Suporte</h4>
+        <h4 class="mb-3" style="margin-top: 15px;"><fmt:message key="support.title" /></h4>
         <form class="needs-validation" action="suporte" method="post">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="nome" class="form-label">Assunto</label>
+              <label for="nome" class="form-label"><fmt:message key="support.subject" /></label>
               <input type="text" class="form-control" id="assunto" name="assunto" value="" required>
             </div>
 
             <div class="col-sm-6">
-              <label for="sobrenome" class="form-label">Título</label>
+              <label for="sobrenome" class="form-label"><fmt:message key="support.messageTitle" /></label>
               <input type="text" class="form-control" id="titulo" name="titulo" value="" required>
             </div>
 
             <div class="col-12">
-              <label for="senha" class="form-label">Mensagem</label>
+              <label for="senha" class="form-label"><fmt:message key="support.message" /></label>
               <div class="input-group has-validation">
                 <textarea name="suporte_mensagem" id="suporte_mensagem" class="form-control" cols="30" rows="10"></textarea>
               </div>
             </div>
 
           <hr class="my-4">
-          <span>Ou entre em contato por e-mail:<strong style="margin-left: 5px">contato@pixelhub.com.br</strong> </span>
-          <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar">Enviar</button>
+          <span><fmt:message key="support.contact" /><strong style="margin-left: 5px">contato@pixelhub.com.br</strong> </span>
+          <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar"><fmt:message key="support.button" /></button>
         </form>
       </div>
     </div>
@@ -128,10 +129,10 @@
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Nintendo</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Xbox</a></li>
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Playstation</a></li>
-          <li class="nav-item"><a href="/java-web-app-1.0/termos.html"
-              class="nav-link px-2 text-body-secondary">Termos</a></li>
-          <li class="nav-item"><a href="/java-web-app-1.0/suporte.html"
-              class="nav-link px-2 text-body-secondary">Suporte</a></li>
+          <li class="nav-item"><a href="termos"
+              class="nav-link px-2 text-body-secondary"><fmt:message key="registration.terms" /></a></li>
+          <li class="nav-item"><a href="suporte"
+              class="nav-link px-2 text-body-secondary"><fmt:message key="support.title" /></a></li>
         </ul>
       </footer>
 
