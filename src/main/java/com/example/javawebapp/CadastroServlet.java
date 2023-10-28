@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import com.example.javawebapp.validators.ValidatorUtil;
 import com.example.javawebapp.forms.CadastroForm;
-import com.example.javawebapp.usuario.UsuarioDao;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,7 +20,7 @@ public class CadastroServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
+        res.sendRedirect("cadastro.jsp");
     }
 
     @Override
@@ -47,13 +46,7 @@ public class CadastroServlet extends HttpServlet {
         cadastroForm.validarSenha(senha, confirmar);
 
         if (violations.isEmpty() && cadastroForm.getErros().isEmpty()) {
-            if(UsuarioDao.verificarEmailExistente(email)){
-                req.setAttribute("erroEmail", "Já existe um usuário com esse email!");
-                req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
-            } else{
-                UsuarioDao.cadastrar(nome, email, senha);
-                res.sendRedirect("index.jsp");
-            }
+            res.sendRedirect("principal.jsp");
         } else {
             req.setAttribute("nome", nome);
             req.setAttribute("sobrenome", sobrenome);
@@ -70,7 +63,7 @@ public class CadastroServlet extends HttpServlet {
             req.setAttribute("violations", violations);
             req.setAttribute("erros", cadastroForm.getErros());
             req.setAttribute("errosSenha", cadastroForm.getErrosSenha());
-            req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
+            req.getRequestDispatcher("cadastro.jsp").forward(req, res);
         }
     }
 }
