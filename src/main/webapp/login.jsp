@@ -46,15 +46,12 @@
 
     <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 5%;">
       <div class="modal-dialog" role="document">
-        <c:if test="${erros != null}">
+        <c:if test="${violations != null}">
             <div style="display: flex; justify-content: center; margin: 20px;">
                 <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
-                    <ul style="margin: 20px;">
-                        <c:forEach var="erro" items="${erros}">
-                        <li>${erro}</li>
-                        </c:forEach>
-                        <c:forEach var="erro" items="${erroSenha}">
-                        <li>${erro}</li>
+                    <ul style="text-decoration: none;">
+                        <c:forEach var="violation" items="${violations}">
+                        <li>${violation.propertyPath} ${violation.message}</li>
                         </c:forEach>
                     </ul>
                 </div>
