@@ -109,3 +109,13 @@ ou
 ./mvnw.cmd package
 ```
 
+
+
+//TODO
+
+mover as paginas para dentro do web-inf, trocar os redirects por getRequestDispatcher
+
+
+
+*/
+

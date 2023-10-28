@@ -49,8 +49,8 @@
                 </div>
             </form>
             <div style="margin-right: 2%;">
-              <button type="button" class="btn btn-outline-primary me-2"><a href="login.jsp" style="text-decoration: none;">Login</a></button>
-              <button type="button" class="btn btn-primary"><a href="cadastro.jsp" style="text-decoration: none; color: white;">Cadastrar</a></button>
+              <button type="button" class="btn btn-outline-primary me-2"><a href="login" style="text-decoration: none;">Login</a></button>
+              <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;">Cadastrar</a></button>
             </div>
           </div>
         </div>

@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 // 1. criar uma classe em java
 // 2. extends HttpServlet
 // 3. "roteamento" anotar a classe com @WebServlet definir
@@ -20,18 +19,23 @@ import jakarta.servlet.http.HttpServletResponse;
 public class RecuperarServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.getRequestDispatcher("WEB-INF/recuperar.jsp").forward(req, res);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        
+
         String novaSenha = req.getParameter("novaSenha");
         String confirmarSenha = req.getParameter("confirmarSenha");
-        
+
         Validacao recuperar = new Validacao();
         recuperar.validarSenha(novaSenha);
         recuperar.confirmarSenha(novaSenha, confirmarSenha);
 
-        if(recuperar.getErros().isEmpty()){
+        if (recuperar.getErros().isEmpty()) {
             res.sendRedirect("login.jsp");
-        }else{
+        } else {
             req.setAttribute("novaSenha", novaSenha);
             req.setAttribute("confirmarSenha", confirmarSenha);
             req.setAttribute("erros", recuperar.getErros());
@@ -39,7 +43,5 @@ public class RecuperarServlet extends HttpServlet {
         }
 
     }
-
-    
 
 }

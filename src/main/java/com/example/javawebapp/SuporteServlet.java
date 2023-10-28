@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 // 1. criar uma classe em java
 // 2. extends HttpServlet
 // 3. "roteamento" anotar a classe com @WebServlet definir
@@ -19,17 +18,22 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SuporteServlet extends HttpServlet {
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        req.getRequestDispatcher("suporte.jsp").forward(req, res);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String assunto = req.getParameter("assunto");    
-        String titulo = req.getParameter("titulo");  
-        String mensagem = req.getParameter("suporte_mensagem");      
-         
+        String assunto = req.getParameter("assunto");
+        String titulo = req.getParameter("titulo");
+        String mensagem = req.getParameter("suporte_mensagem");
+
         Validacao suporte = new Validacao();
         suporte.validarAssunto(assunto);
         suporte.validarTitulo(titulo);
         suporte.validarMensagem(mensagem);
 
-        if(suporte.getErros().isEmpty()){
+        if (suporte.getErros().isEmpty()) {
             res.sendRedirect("index.jsp");
         } else {
             req.setAttribute("assunto", assunto);
@@ -40,5 +44,5 @@ public class SuporteServlet extends HttpServlet {
         }
 
     }
-    
+
 }
