@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
   <head>
     <meta charset="utf-8">
@@ -7,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
-    <title>Login</title>
+    <title><fmt:message key="login.title" /></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/modals/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
@@ -46,15 +47,12 @@
 
     <div class="modal modal-sheet position-static d-block p-4 py-md-5"tabindex="-1" role="dialog" id="modalSignin" style="margin-top: 5%;">
       <div class="modal-dialog" role="document">
-        <c:if test="${erros != null}">
+        <c:if test="${violations != null}">
             <div style="display: flex; justify-content: center; margin: 20px;">
                 <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
-                    <ul style="margin: 20px;">
-                        <c:forEach var="erro" items="${erros}">
-                        <li>${erro}</li>
-                        </c:forEach>
-                        <c:forEach var="erro" items="${erroSenha}">
-                        <li>${erro}</li>
+                    <ul style="text-decoration: none;">
+                        <c:forEach var="violation" items="${violations}">
+                        <li>${violation.propertyPath} ${violation.message}</li>
                         </c:forEach>
                     </ul>
                 </div>
@@ -67,29 +65,29 @@
           </div>
           <div style="margin-top: -8%;">
             <div class="modal-header p-5 pb-4 border-bottom-0">
-              <h1 class="fw-bold mb-0 fs-2">Login</h1>
+              <h1 class="fw-bold mb-0 fs-2"><fmt:message key="login.title" /></h1>
             </div>
             <div class="modal-body p-5 pt-0">
               <form class="" action="login" method="post" >
                 <div class="form-floating mb-3">
                   <input type="email" name="email" class="form-control rounded-3" id="floatingInput" value="${email}" placeholder="nome@exemplo.com">
-                  <label for="floatingInput">Email</label>
+                  <label for="floatingInput"><fmt:message key="login.email" /></label>
                 </div>
                 <div class="form-floating mb-3">
                   <input type="password" name="senha" class="form-control rounded-3" id="floatingPassword" value="${senha}" placeholder="Senha">
-                  <label for="floatingPassword">Senha</label>
+                  <label for="floatingPassword"><fmt:message key="login.password" /></label>
                 </div>
                 <div>
                   <label style="margin-bottom: 10px;">
-                    <input type="checkbox" value="Continuar Conectado = True" name="ContinuarConectado"> Continuar conectado
+                    <input type="checkbox" value="Continuar Conectado = True" name="ContinuarConectado"> <fmt:message key="login.continueConnected" />
                   </label>
                 </div>
-                <button name="login" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
+                <button name="login" class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit"><fmt:message key="login.title" /></button>
                 <div style="justify-content: center; display: flex; margin-bottom: -4%; margin-top: 2%;">
-                  <p> <a href="recuperar.jsp">Esqueci minha senha</a></p>
+                  <p> <a href="recuperar"><fmt:message key="login.forgetPassword" /></a></p>
                 </div>
                 <hr class="my-4">
-                <h2 class="fs-5 fw-bold mb-3"> Não é cadastrado? <a href="cadastro.jsp">  Faça o cadastro aqui!</a></h2>
+                <h2 class="fs-5 fw-bold mb-3"><fmt:message key="login.already" /> <a href="cadastro"><fmt:message key="login.alreadyButton" /></a></h2>
               </form>
             </div>
           </div>

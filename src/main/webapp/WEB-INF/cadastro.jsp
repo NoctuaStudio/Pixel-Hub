@@ -263,7 +263,7 @@
                                 </div>
                                 <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar"> <fmt:message key="registration.button" /> </button> 
                             <div style="display: flex; justify-content: center; margin-bottom: -5%; margin-top: 2%;">
-                                <h2 class="fs-5 fw-bold mb-3"> <fmt:message key="registration.already" /> <a href="login.jsp"><fmt:message key="registration.alreadyButton" /></a></h2>
+                                <h2 class="fs-5 fw-bold mb-3"> <fmt:message key="registration.already" /> <a href="login"><fmt:message key="registration.alreadyButton" /></a></h2>
                             </div>
                         </form>
                     </div>
@@ -274,7 +274,7 @@
         <footer class="my-5 pt-5 text-body-secondary text-center text-small">
             <p class="mb-1">&copy; 2023 Pixel Hub</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="termos.html"><fmt:message key="registration.terms" /></a></li>
+                <li class="list-inline-item"><a href="termos.jsp"><fmt:message key="registration.terms" /></a></li>
                 <li class="list-inline-item"><a href="suporte.jsp"><fmt:message key="registration.support" /></a></li>
             </ul>
         </footer>
