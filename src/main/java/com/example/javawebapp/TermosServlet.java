@@ -19,6 +19,6 @@ public class TermosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("termos.jsp").forward(req, res);
+        req.getRequestDispatcher("WEB-INF/termos.jsp").forward(req, res);
     }
 }
