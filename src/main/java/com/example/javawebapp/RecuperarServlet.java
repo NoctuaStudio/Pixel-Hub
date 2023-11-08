@@ -34,12 +34,12 @@ public class RecuperarServlet extends HttpServlet {
         recuperar.confirmarSenha(novaSenha, confirmarSenha);
 
         if (recuperar.getErros().isEmpty()) {
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("WEB-INF/login.jsp");
         } else {
             req.setAttribute("novaSenha", novaSenha);
             req.setAttribute("confirmarSenha", confirmarSenha);
             req.setAttribute("erros", recuperar.getErros());
-            req.getRequestDispatcher("recuperar.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/recuperar.jsp").forward(req, res);
         }
 
     }
