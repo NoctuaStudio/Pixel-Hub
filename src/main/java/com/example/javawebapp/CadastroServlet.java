@@ -1,7 +1,6 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Set;
 import com.example.javawebapp.validators.ValidatorUtil;
 import com.example.javawebapp.forms.CadastroForm;

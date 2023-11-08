@@ -58,6 +58,15 @@
                 </div>
             </div>
         </c:if>
+        <c:if test="${erroLogin != null}">
+            <div style="display: flex; justify-content: center; margin: 20px;">
+                <div class="col-md-10 col-lg-8 rounded-3 shadow" style="border: 1px solid black; background-color: rgb(243, 77, 77);">
+                    <ul style="text-decoration: none;">
+                        <p>${erroLogin}</p>
+                    </ul>
+                </div>
+            </div>
+        </c:if>
         <div class="modal-content rounded-4 shadow">
           <div class="py-1 text-center" style="padding: 0;">
             <img class="mx-auto" src="imagem/pixel-hub-transparente.png" alt="" width="250px"
