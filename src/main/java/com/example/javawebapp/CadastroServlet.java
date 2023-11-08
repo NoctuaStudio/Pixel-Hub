@@ -47,7 +47,7 @@ public class CadastroServlet extends HttpServlet {
         cadastroForm.validarSenha(senha, confirmar);
 
         if (violations.isEmpty() && cadastroForm.getErros().isEmpty()) {
-            if(UsuarioDao.verificarEmailExistente(email)){
+            if(UsuarioDao.existeComEmail(email)){
                 req.setAttribute("erroEmail", "Já existe um usuário com esse email!");
                 req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
             } else{

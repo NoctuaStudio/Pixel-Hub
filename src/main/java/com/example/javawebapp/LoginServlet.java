@@ -31,6 +31,15 @@ public class LoginServlet extends HttpServlet {
         req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
     }
 
+
+
+    // TODO: isolar validações em outro método/classe/...
+    // TODO: usar expressões regulares quando possível
+    // TODO: criar representação para dados de entrada, ex: classe LoginForm, LoginReq, ...
+    // TODO: implementar número de tentativas de login
+    // TODO: implementar csrf token
+
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -56,7 +65,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("senha", senha);
             req.setAttribute("continuarConectado", continuarConectado);
             req.setAttribute("violation", violations);
-            req.getRequestDispatcher("login.jsp").forward(req, res);
+            req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
         }
         // salvar no banco de dados
         // fazer em todos os redirect
