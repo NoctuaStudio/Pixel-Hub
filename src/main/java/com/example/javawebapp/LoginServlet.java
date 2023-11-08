@@ -15,6 +15,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.ConstraintViolation;
+import jakarta.validation.OverridesAttribute.List;
 
 // 1. criar uma classe em java
 // 2. extends HttpServlet
@@ -49,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 
         LoginForm loginForm = new LoginForm(email, senha, continuarConectado);
 
-        Set<ConstraintViolation<LoginForm>> violations = ValidatorUtil.validateObject(loginForm);
+       Set<ConstraintViolation<LoginForm>> violations = ValidatorUtil.validateObject(loginForm);
 
         if(violations.isEmpty()){
             if(UsuarioDao.login(email, senha)){
