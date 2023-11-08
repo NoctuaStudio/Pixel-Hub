@@ -205,10 +205,10 @@
                                                 </c:when>
                                                 <c:otherwise>
                                                     <c:if test="${!errosSenha[4]}">
-                                                        <li><p class="password-rule-2" style="color: red"><fmt:message key="registration.confirmPasswordLenght" /></p></li>
+                                                        <li><p class="password-rule-2" style="color: red"><fmt:message key="registration.confirmPasswordLength" /></p></li>
                                                     </c:if>
                                                     <c:if test="${errosSenha[4]}">
-                                                        <li><p class="password-rule-2" style="color: green"><fmt:message key="registration.confirmPasswordLenght" /></p></li>
+                                                        <li><p class="password-rule-2" style="color: green"><fmt:message key="registration.confirmPasswordLength" /></p></li>
                                                     </c:if>
                                                 </c:otherwise>
                                             </c:choose>

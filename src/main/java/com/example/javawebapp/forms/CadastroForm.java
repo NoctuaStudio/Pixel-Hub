@@ -19,15 +19,12 @@ public class CadastroForm {
     private String username;
     @NotNull
     @NotBlank
-    @Size(min = 8, max = 30)
     private String senha;
     @NotNull
     @NotBlank
-    @Size(min = 8, max = 30)
     private String confirmar;
     @NotNull
     @NotBlank
-    @Email
     private String email;
     @NotNull
     @NotBlank
