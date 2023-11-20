@@ -28,7 +28,6 @@
 }
 
 .bi {
-    vertical-align: -.125em;
     fill: currentColor;
 }
 
@@ -82,6 +81,27 @@ body {
     -webkit-animation: AnimationName 7s ease infinite;
     -moz-animation: AnimationName 7s ease infinite;
     animation: AnimationName 7s ease infinite;
+}
+
+.btn-fairy{
+    background: linear-gradient(51deg, #f9e7e7, #e5f3fb, #d8f2ef);
+    -webkit-animation: AnimationName 7s ease infinite;
+    -moz-animation: AnimationName 7s ease infinite;
+    animation: AnimationName 7s ease infinite;
+
+    border: none;
+    color: black!important;
+}
+
+.btn-fairy-distinct{
+    border: 2px solid linear-gradient(51deg, #f9e7e7, #e5f3fb, #d8f2ef)!important;
+    background-color: transparent;
+    color: linear-gradient(51deg, #f9e7e7, #e5f3fb, #d8f2ef)!important;
+}
+
+.btn-fairy-distinct:hover{
+    background-color: linear-gradient(51deg, #f9e7e7, #e5f3fb, #d8f2ef)!important;
+    color: black!important;
 }
 
 @-webkit-keyframes AnimationName {
