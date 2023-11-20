@@ -15,7 +15,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.ConstraintViolation;
-import jakarta.validation.OverridesAttribute.List;
 
 // 1. criar uma classe em java
 // 2. extends HttpServlet
