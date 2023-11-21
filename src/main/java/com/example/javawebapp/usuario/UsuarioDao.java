@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.*;
 import java.sql.Statement;
 
-import org.eclipse.tags.shaded.org.apache.xpath.operations.Bool;
 import com.example.javawebapp.db.Conexao;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 

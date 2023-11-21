@@ -1,4 +1,4 @@
-package com.example.javawebapp;
+package com.example.javawebapp.validators;
 
 import java.util.ArrayList;
 

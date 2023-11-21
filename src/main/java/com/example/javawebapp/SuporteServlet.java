@@ -1,5 +1,6 @@
 package com.example.javawebapp;
 
+import com.example.javawebapp.validators.Validacao;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
