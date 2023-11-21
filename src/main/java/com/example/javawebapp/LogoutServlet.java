@@ -20,7 +20,7 @@ public class LogoutServlet extends HttpServlet {
         Usuario usuarioLogado = (Usuario) session.getAttribute("usuarioLogado");
          if (usuarioLogado == null) {
             System.out.println("NAO TINHA SESSAO");
-            res.sendRedirect("login.jsp");
+            res.sendRedirect("login");
             return;
         }
 
@@ -29,6 +29,6 @@ public class LogoutServlet extends HttpServlet {
         session.removeAttribute("usuarioLogado");
         System.out.println("SESSAO ELIMINADA");
 
-        res.sendRedirect("index.jsp");
+        res.sendRedirect("index");
     }
 }
