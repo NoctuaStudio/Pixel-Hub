@@ -75,8 +75,9 @@
                             
                         </div>
                         <div class="details col-md-6">
-                            <h3 class="product-title">men's shoes fashion</h3>
-                            <div class="rating">
+                            <h3 class="product-title">${produto.nome} Alvestuz</h3>
+                            <p>${usuario.nome} Alberto</p>
+                            <!--<div class="rating">
                                 <div class="stars">
                                     <span class="fa fa-star checked"></span>
                                     <span class="fa fa-star checked"></span>
@@ -85,24 +86,21 @@
                                     <span class="fa fa-star"></span>
                                 </div>
                                 <span class="review-no">41 reviews</span>
-                            </div>
-                            <p class="product-description">Suspendisse quos? Tempus cras iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et! Massa senectus enim minim sociosqu delectus posuere.</p>
-                            <h4 class="price">current price: <span>$180</span></h4>
+                            </div>-->
+                            <h4 class="price"><fmt:message key="produto.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
+                            <p class="product-description"><c:out value="${produto.descricao}"/> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima optio esse in, quis neque, fugiat dolore eligendi ducimus quasi eveniet repellendus voluptate porro sequi iste nobis quisquam labore distinctio fugit.</p>
                             <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                            <h5 class="sizes">sizes:
-                                <span class="size" data-toggle="tooltip" title="small">s</span>
-                                <span class="size" data-toggle="tooltip" title="medium">m</span>
-                                <span class="size" data-toggle="tooltip" title="large">l</span>
-                                <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
-                            </h5>
-                            <h5 class="colors">colors:
-                                <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
-                                <span class="color green"></span>
-                                <span class="color blue"></span>
-                            </h5>
-                            <div class="action">
+                            <div class="d-flex flex-row justify-content-between">
+                              <p><b><fmt:message key="produto.category"/></b>${produto.categoria} Bola</p>
+                              <p><b><fmt:message key="produto.condition"/></b>${produto.condicao} Usado</p>
+                              
+                            </div>
+                            <div class="action d-flex flex-row justify-content-between">
+                                <div class="col-6">
+                                  <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>Quantidade:</label>
+                                  <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
+                                </div>
                                 <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                                <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                             </div>
                         </div>
                     </div>
