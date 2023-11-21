@@ -48,6 +48,7 @@ public class CadastroServlet extends HttpServlet {
                 req.setAttribute("erroEmail", "Já existe um usuário com esse email!");
                 req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
             } else{
+                // AQUI DataBase
                 UsuarioDao.cadastrar(nome, email, senha);
                 res.sendRedirect("index.jsp");
             }
