@@ -151,7 +151,7 @@ INSERT INTO Usuarios (Nome, Sobrenome, Username, Senha, Email, Telefone, Enderec
 
 	-- Inserir 10 anúncios de venda
 INSERT INTO Produtos (ID_Usuario, Nome, Descricao, Imagem, Categoria, Preco, Quantidade, Usado, Hora_postagem) VALUES
-    (1, 'PlayStation 5', 'Console de última geração da Sony', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.oficinadosbits.com.br%2Fproduto%2Fconsole-sony-playstation-5-standard-825gb-branco-cfi-1214a%2F&psig=AOvVaw1pyDs8CYvFwkMre05-0M_D&ust=1700692285641000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCODCnM2S1oIDFQAAAAAdAAAAABAF', 'Console', 3000.00, 1, false, '2023-11-20 10:30:00'),
+    (1, 'PlayStation 5', 'Console de última geração da Sony', 'https://sm.ign.com/ign_br/screenshot/default/ps5-5-motivos-para-comprar-o-console-de-nova-geracao-da-sony_741k.jpg', 'Console', 3000.00, 1, false, '2023-11-20 10:30:00'),
     (2, 'Teclado Mecânico RGB', 'Teclado para jogos mecânico com iluminação RGB', 'https://img.terabyteshop.com.br/produto/g/teclado-mecanico-gamer-redragon-dragonborn-rgb-switch-brown-abnt2-whitepink-k630wp-rgb-pt-brown_162133.jpg', 'Periferico', 250.00, 5, true, '2023-11-20 11:15:00'),
     (3, 'Mouse Gamer', 'Mouse de alta precisão para jogos', 'https://images.kabum.com.br/produtos/fotos/sync_mirakl/189624/Mouse-Gamer-Light-Usb-Rgb-2400-Dpi-6-Bot-es-Bright-447_1693507092_gg.jpg', 'Periferico', 80.00, 10, false, '2023-11-20 12:00:00'),
     (4, 'Headset Sem Fio', 'Headset para jogos sem fio com áudio surround', 'https://resource.logitechg.com/w_692,c_lpad,ar_4:3,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g535-wireless/g535-wireless-gallery-1.png?v=1', 'Acessorio', 150.00, 3, true, '2023-11-20 13:30:00'),

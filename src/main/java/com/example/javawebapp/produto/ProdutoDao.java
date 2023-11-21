@@ -100,4 +100,41 @@ public class ProdutoDao {
 
         return produtos;
     }
-}
+
+        public static Produto obterPorId(int id) {
+            String sql = "SELECT * FROM produtos WHERE ID = ?";
+            Produto produto = null;
+    
+            try (
+                Connection connection = Conexao.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+            ) {
+                statement.setInt(1, id);
+                ResultSet rs = statement.executeQuery();
+    
+                if (rs.next()) {
+                    produto = new Produto(
+                        rs.getInt("ID"),
+                        rs.getInt("ID_Usuario"),
+                        rs.getString("Nome"),
+                        rs.getString("Descricao"),
+                        rs.getString("Imagem"),
+                        rs.getString("Categoria"),
+                        rs.getDouble("Preco"),
+                        rs.getInt("Quantidade"),
+                        rs.getString("Usado"),
+                        rs.getTimestamp("Hora_postagem").toLocalDateTime()
+                    );
+                }
+    
+                rs.close();
+    
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+    
+            return produto;
+        }
+    }
+    
+

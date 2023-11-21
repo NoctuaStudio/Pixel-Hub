@@ -69,22 +69,22 @@
             <div class="wrapper row">
               <div class="preview col-md-6">
                 <div class="preview-pic tab-content">
-                    <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
+                    <div class="tab-pane active" id="pic-1"><img src="${produto.imagem}" /></div>
                 </div>
               </div>
               <div class="details col-md-6">
 
-                <h3 class="product-title">${produto.nome} Alvestuz</h3>
+                <h3 class="product-title">${produto.nome}</h3>
 
-                <p>${usuario.nome} Alberto</p>
+                <p>${usuario.nome}</p>
 
-                <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
+                <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.preco}"/></span></h4>
                 
-                <p class="product-description"><c:out value="${produto.descricao}"/> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima optio esse in, quis neque, fugiat dolore eligendi ducimus quasi eveniet repellendus voluptate porro sequi iste nobis quisquam labore distinctio fugit.</p>
+                <p class="product-description"><c:out value="${produto.descricao}"/></p>
           
                 <div class="d-flex flex-row justify-content-between">
-                  <p><b><fmt:message key="product.category"/></b>${produto.categoria} Bola</p>
-                  <p><b><fmt:message key="product.condition"/></b>${produto.condicao} Usado</p>
+                  <p><b><fmt:message key="product.category"/></b> ${produto.categoria} </p>
+                  <p><b><fmt:message key="product.condition"/></b> ${produto.condicao}</p>
                 </div>
 
                 <div class="action d-flex flex-row justify-content-between">

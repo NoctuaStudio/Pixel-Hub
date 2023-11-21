@@ -326,7 +326,7 @@
                                                 <div class="product-info">
                                                     <div class="row">
                                                         <div class="col-md-12 product-name">
-                                                            <a href="/produto/${produto.id}">
+                                                            <a href="produto?id=${produto.id}">
                                                                 <h2>${produto.nome}</h2>
                                                             </a>
                                                         </div>
@@ -338,7 +338,7 @@
                                                             <h3>R$ ${produto.preco}</h3>
                                                         </div>
                                                         <div class="col-md-12 product-add">
-                                                            <a href="/produto/${produto.id}" class="btn btn-outline-dark">Ver mais</a>
+                                                            <a href="produto?id=${produto.id}" class="btn btn-outline-dark">Ver mais</a>
                                                         </div>
                                                     </div>
                                                 </div>

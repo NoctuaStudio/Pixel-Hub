@@ -11,10 +11,10 @@ public class Produto {
     private String categoria;
     private Double preco;
     private Integer quantidade;
-    private String usado; // Modificado de Boolean para String
+    private String condicao; // Modificado de Boolean para String
     private LocalDateTime horaPostagem;
 
-    public Produto(Integer id, Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, String usado, LocalDateTime horaPostagem) {
+    public Produto(Integer id, Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, String condicao, LocalDateTime horaPostagem) {
         this.id = id;
         this.idUsuario = idUsuario;
         this.nome = nome;
@@ -23,7 +23,7 @@ public class Produto {
         this.categoria = categoria;
         this.preco = preco;
         this.quantidade = quantidade;
-        this.usado = usado;
+        this.condicao = condicao;
         this.horaPostagem = horaPostagem;
     }
 
@@ -91,12 +91,12 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public String getUsado() {
-        return usado;
+    public String getcondicao() {
+        return condicao;
     }
 
-    public void setUsado(String usado) {
-        this.usado = usado;
+    public void setcondicao(String condicao) {
+        this.condicao = condicao;
     }
 
     public LocalDateTime getHoraPostagem() {
@@ -111,6 +111,6 @@ public class Produto {
     public String toString() {
         return "Produto [id=" + id + ", idUsuario=" + idUsuario + ", nome=" + nome + ", descricao=" + descricao
                 + ", imagem=" + imagem + ", categoria=" + categoria + ", preco=" + preco + ", quantidade=" + quantidade
-                + ", usado=" + usado + ", horaPostagem=" + horaPostagem + "]";
+                + ", condicao=" + condicao + ", horaPostagem=" + horaPostagem + "]";
     }
 }
