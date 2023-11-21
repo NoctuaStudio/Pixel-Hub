@@ -11,10 +11,10 @@ public class Produto {
     private String categoria;
     private Double preco;
     private Integer quantidade;
-    private Boolean usado;
+    private String usado; // Modificado de Boolean para String
     private LocalDateTime horaPostagem;
 
-    public Produto(Integer id, Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, Boolean usado, LocalDateTime horaPostagem) {
+    public Produto(Integer id, Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, String usado, LocalDateTime horaPostagem) {
         this.id = id;
         this.idUsuario = idUsuario;
         this.nome = nome;
@@ -91,11 +91,11 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public Boolean getUsado() {
+    public String getUsado() {
         return usado;
     }
 
-    public void setUsado(Boolean usado) {
+    public void setUsado(String usado) {
         this.usado = usado;
     }
 
@@ -113,6 +113,4 @@ public class Produto {
                 + ", imagem=" + imagem + ", categoria=" + categoria + ", preco=" + preco + ", quantidade=" + quantidade
                 + ", usado=" + usado + ", horaPostagem=" + horaPostagem + "]";
     }
-
-    
 }

@@ -12,7 +12,7 @@ import com.example.javawebapp.db.Conexao;
 
 public class ProdutoDao {
 
-    public static Produto cadastrar(Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, Boolean usado) {
+    public static Produto cadastrar(Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, String usado) {
         Produto produto = null;
         String sql = "INSERT INTO Produtos (ID_Usuario, Nome, Descricao, Imagem, Categoria, Preco, Quantidade, Usado, Hora_postagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
 
@@ -27,7 +27,7 @@ public class ProdutoDao {
             statement.setString(5, categoria);
             statement.setDouble(6, preco);
             statement.setInt(7, quantidade);
-            statement.setBoolean(8, usado);
+            statement.setString(8, usado); // Modificado de setBoolean para setString
             statement.executeUpdate(); // Executando a query
 
             ResultSet rs = statement.getGeneratedKeys();
@@ -76,7 +76,7 @@ public class ProdutoDao {
                         rs.getString("Categoria"),
                         rs.getDouble("Preco"),
                         rs.getInt("Quantidade"),
-                        rs.getBoolean("Usado"),
+                        rs.getString("Usado"), // Modificado de getBoolean para getString
                         rs.getTimestamp("Hora_postagem").toLocalDateTime()
                     )
                 );

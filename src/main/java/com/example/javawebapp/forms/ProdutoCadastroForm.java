@@ -19,7 +19,7 @@ public class ProdutoCadastroForm {
     @Positive
     @NotNull
     @NotBlank
-    private Float preco;
+    private Double preco;
 
     @Positive
     @NotNull
@@ -34,7 +34,7 @@ public class ProdutoCadastroForm {
     @NotBlank
     private String imagem;
 
-    public ProdutoCadastroForm(String nome, String descricao, Float preco2, int quantidade2, String categoria, String imagem) {
+    public ProdutoCadastroForm(String nome, String descricao, Double preco2, int quantidade2, String categoria, String imagem) {
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco2;
@@ -59,11 +59,11 @@ public class ProdutoCadastroForm {
         this.descricao = descricao;
     }
 
-    public Float getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(Float preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
