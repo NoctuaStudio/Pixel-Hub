@@ -24,10 +24,10 @@ public class ProdutosServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/mostrar-produtos.jsp").forward(req, res);
         List<Produto> produtos = ProdutoDao.listarTodos();
         System.out.println(produtos.size());
         req.setAttribute("produtos", produtos);
+        req.getRequestDispatcher("WEB-INF/mostrar-produtos.jsp").forward(req, res);
     }
 
     @Override
