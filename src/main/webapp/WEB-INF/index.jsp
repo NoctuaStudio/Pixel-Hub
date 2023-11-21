@@ -71,9 +71,9 @@
             <img src="imagem/nintendo-switch.jpg" style="filter: brightness(75%)" class="bd-placeholder-img" width="100%" height="550px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1>Nintendo Switch Oled</h1>
-                <p class="opacity-75">Adquira já o seu!  - R$ 2.069,10</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
+                <h1><fmt:message key="index.nintentoTitle"/></h1>
+                <p class="opacity-75"><fmt:message key="index.nintendoMessage"/></p>
+                <p><a class="btn btn-lg btn-primary" href="#"><fmt:message key="index.seeMore"/></a></p>
               </div>
             </div>
           </div>
@@ -81,9 +81,9 @@
             <img src="imagem/ps5-controle-lebron-james.png" style="filter: brightness(75%)" class="bd-placeholder-img" width="100%" height="550px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
             <div class="container">
               <div class="carousel-caption">
-                <h1>PS5 Controle Lebron James</h1>
-                <p>Controle exclusivo do Lebron James para PS5!</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
+                <h1><fmt:message key="index.lebronController"/></h1>
+                <p><fmt:message key="index.lebronMessage"/></p>
+                <p><a class="btn btn-lg btn-primary" href="#"><fmt:message key="index.seeMore"/></a></p>
               </div>
             </div>
           </div>
@@ -91,20 +91,20 @@
             <img src="imagem/baldurs_gate_3_capa__5m88x0-1210x544.webp" style="filter: brightness(75%)" class="bd-placeholder-img" width="100%" height="550px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
             <div class="container">
               <div class="carousel-caption text-end">
-                <h1>Baldurs Gate 3</h1>
-                <p>O jogo mais aclamado pelos jogadores de RPG!</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Veja mais</a></p>
+                <h1><fmt:message key="index.baldursTitle"/></h1>
+                <p><fmt:message key="index.baldursMessage"/></p>
+                <p><a class="btn btn-lg btn-primary" href="#"><fmt:message key="index.seeMore"/></a></p>
               </div>
             </div>
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
+          <span class="visually-hidden"><fmt:message key="index.previous"/></span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Proximo</span>
+          <span class="visually-hidden"><fmt:message key="index.next"/></span>
         </button>
       </div>
 
@@ -113,18 +113,18 @@
           <div class="row">
             <div class="col-lg-4">
               <img src="imagem/cart-check.svg" class="bd-placeholder-img " width="70" height="70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
-              <h2 class="fw-normal" style="padding-top: 3%;">Venda e Compre!</h2>
-              <p> Na nossa plataforma, pode vender jogos, consoles e acessórios usados e pode comprar, álem dos nossos produtos, produtos da nossa comunidade.</p>
+              <h2 class="fw-normal" style="padding-top: 3%;"><fmt:message key="index.sellBuy"/></h2>
+              <p><fmt:message key="index.sellBuyMessage"/></p>
             </div>
             <div class="col-lg-4">
               <img src="imagem/chat-square-dots.svg" class="bd-placeholder-img" width="70" height="70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
-              <h2 class="fw-normal" style="padding-top: 3%;">Avaliações!</h2>
-              <p>Além de termos jogos de qualidade, temos também uma base de criticas que podem te ajudar a escolher melhor seu proximo jogo.</p>
+              <h2 class="fw-normal" style="padding-top: 3%;"><fmt:message key="index.avaliation"/></h2>
+              <p><fmt:message key="index.avaliationMessage"/></p>
             </div>
             <div class="col-lg-4">
               <img src="imagem/patch-check.svg" class="bd-placeholder-img rounded-circle" width="70" height="70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
-              <h2 class="fw-normal" style="padding-top: 3%;">Segurança!</h2>
-              <p>Todas as transações tem a nossa segurança, sem riscos de alguma perda.</p>
+              <h2 class="fw-normal" style="padding-top: 3%;"><fmt:message key="index.security"/></h2>
+              <p><fmt:message key="index.securityMessage"/></p>
             </div>
           </div>
 
@@ -132,8 +132,8 @@
 
           <div class="row featurette">
             <div class="col-md-7">
-              <h2 class="featurette-heading fw-normal lh-1">Pokemon como você nunca jogou! </h2>
-              <p class="lead">Com a pokebola como controle do switch, você consegue capturar pokemons de uma forma mais dinamica. Com os sensores de movimento presentes no switch, sua experiencia com pokemon será diferente de todas as anteriores.</p>
+              <h2 class="featurette-heading fw-normal lh-1"><fmt:message key="index.pokemonTitle"/></h2>
+              <p class="lead"><fmt:message key="index.pokemonMessage"/></p>
             </div>
             <div class="col-md-5">
               <img src="imagem/pokeboll_joystick.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img">
@@ -144,8 +144,8 @@
 
           <div class="row featurette">
             <div class="col-md-7 order-md-2">
-              <h2 class="featurette-heading fw-normal lh-1">Spider-Man 2</h2>
-              <p class="lead">O sucesso do jogo Spider-Man é inegavel, mas será que sua continuação vai ser tão bom quanto? Confira um dos trailers e garanta já a sua cópia na pré-venda! </p>
+              <h2 class="featurette-heading fw-normal lh-1"><fmt:message key="index.spiderManTitle"/></h2>
+              <p class="lead"><fmt:message key="index.spiderManMessage"/> </p>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/KxZ1i-IC4xo?si=3q30Z9BKfjSE7n4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="col-md-5 order-md-1">

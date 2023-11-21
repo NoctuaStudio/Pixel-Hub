@@ -114,7 +114,7 @@
                                     <option <% if ("Jogos".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.games" /></option>
                                     <option <% if ("Periféricos".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.peripheral" /></option>
                                     <option <% if ("Acessórios".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.accessories" /></option>
-                                    <option <% if ("Outros".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.others" /></option>
+                                    <option <% if ("Outros".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>>Outros</option>
                                   </select>
                                 <div class="invalid-feedback">
                                     Please select a valid country.

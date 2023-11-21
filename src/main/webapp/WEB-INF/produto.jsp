@@ -69,7 +69,7 @@
             <div class="wrapper row">
               <div class="preview col-md-6">
                 <div class="preview-pic tab-content">
-                    <div class="tab-pane active" id="pic-1"><img src="${produto.imagem}" /></div>
+                    <div class="tab-pane active" id="pic-1"><img width="350px" height="100px" src="${produto.imagem}" /></div>
                 </div>
               </div>
               <div class="details col-md-6">
