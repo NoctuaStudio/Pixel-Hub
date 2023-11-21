@@ -319,8 +319,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="product-image">
-                                                    <p> IMAGEM: </p>
-                                                    <img src="${produto.imagem}" class="img-responsive">
+                                                    <img src="${produto.imagem}" width="300px" height="150px" class="img-responsive">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
