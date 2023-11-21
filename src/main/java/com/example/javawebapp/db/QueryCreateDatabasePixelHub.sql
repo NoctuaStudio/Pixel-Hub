@@ -37,7 +37,7 @@ CREATE TABLE Produtos(
    Nome VARCHAR(255),
    Descricao VARCHAR(1000),
    Imagem VARCHAR(1000),
-   Categoria ENUM('Console','Periferico','Acessorio', 'Outros'),
+   Categoria ENUM('Console','Periferico', 'Jogos', 'Acessorio', 'Outros'),
    Preco DECIMAL,
    Quantidade INT ,
    Usado BOOLEAN,
