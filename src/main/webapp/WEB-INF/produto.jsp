@@ -87,17 +87,17 @@
                                 </div>
                                 <span class="review-no">41 reviews</span>
                             </div>-->
-                            <h4 class="price"><fmt:message key="produto.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
+                            <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
                             <p class="product-description"><c:out value="${produto.descricao}"/> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima optio esse in, quis neque, fugiat dolore eligendi ducimus quasi eveniet repellendus voluptate porro sequi iste nobis quisquam labore distinctio fugit.</p>
                             <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                            <div class="d-flex flex-row justify-content-between">
-                              <p><b><fmt:message key="produto.category"/></b>${produto.categoria} Bola</p>
-                              <p><b><fmt:message key="produto.condition"/></b>${produto.condicao} Usado</p>
+                            <div class="d-flex flex-row justify-content-evenly">
+                              <p><b><fmt:message key="product.category"/></b>${produto.categoria} Bola</p>
+                              <p><b><fmt:message key="product.condition"/></b>${produto.condicao} Usado</p>
                               
                             </div>
                             <div class="action d-flex flex-row justify-content-between">
                                 <div class="col-6">
-                                  <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>Quantidade:</label>
+                                  <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
                                   <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
                                 </div>
                                 <button class="add-to-cart btn btn-default" type="button">add to cart</button>
