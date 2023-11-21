@@ -39,11 +39,23 @@ public class ProdutoCadastroServlet extends HttpServlet {
 
         String nome = req.getParameter("produtoNome");
         String descricao = req.getParameter("produtoDescricao");
-        Double preco = Double.parseDouble(req.getParameter("produtoPreco"));
-        int quantidade = Integer.parseInt( req.getParameter("produtoQuantidade"));
+        String precoString = req.getParameter("produtoPreco");
+        String quantidadeString = req.getParameter("produtoQuantidade");
         String categoria = req.getParameter("produtoCategoria");
         String condicao =req.getParameter("produtoCondicao");
         String imagem = req.getParameter("produtoImagem");
+
+        if (precoString == null || precoString.isEmpty()) {
+            precoString = "0";
+            
+        }
+        if (quantidadeString == null || quantidadeString.isEmpty()) {
+            quantidadeString = "0";
+        }
+
+        Double preco = Double.parseDouble(precoString);
+        int quantidade = Integer.parseInt(quantidadeString);
+
 
        System.out.println("DADOS:");
        System.out.println("Nome: "+ nome);
@@ -78,7 +90,7 @@ public class ProdutoCadastroServlet extends HttpServlet {
                 System.out.println("ID DO USUÁRIO LOGADO:"+id_usuario);
                 ProdutoDao.cadastrar(id_usuario, nome, descricao, imagem, categoria, preco, quantidade, condicao);
             }
-        } /*else {
+        } else {
             req.setAttribute("nome", nome);
             req.setAttribute("descricao", descricao);
             req.setAttribute("preco", preco);
@@ -87,7 +99,7 @@ public class ProdutoCadastroServlet extends HttpServlet {
             req.setAttribute("imagem", imagem);
             req.setAttribute("violations", violations);
             req.getRequestDispatcher("WEB-INF/cadastrar-produtos.jsp").forward(req, res);
-        }*/
+        }
     }
 }
 
