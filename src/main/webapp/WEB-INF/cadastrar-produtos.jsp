@@ -8,10 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pixel Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="icon" href="imagem/icone.png">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/produto.css">
+    <link href="checkout.css" rel="stylesheet">
 
   </head>
   <body>
@@ -59,24 +62,24 @@
       </nav>
     </header>
 
-    <main class="mt-lg-5">
-      <form action="meu-produto" method="post" class="m-lg-2">
-        <div style="display: flex; justify-content: center; ">
-            <div class="col-md-10 col-lg-8 rounded-4 shadow" style="border: 1px solid black;  background-color: white;">
+    <main class="mt-5">
+        <div class="d-flex justify-content-center m-5">
+          
+            <div class="col-md-10 col-lg-8 rounded-4 shadow mt-5" style="border: 1px solid black;  background-color: white;">
                 <div style="padding: 7%;">
                     <h4 class="mb-3"><fmt:message key="productRegistration.title" /></h4>
                     <form class="needs-validation" action="meu-produto" method="post">
                         <div class="row g-3">
-                            <div class="col-sm-6">
-                                <label for="produtoNome" class="form-label"><fmt:message key="productRegistration.name" />*</label>
-                                <input type="text" class="form-control" id="produtoNome" name="produtoNome" value="${produtoNome}">
+                            <div class="col-sm-12">
+                                <label for="produtoNome" class="form-label"><fmt:message key="productRegistration.name" /></label>
+                                <input type="text" class="form-control" id="produtoNome" name="produtoNome" value="${produtoNome}" placeholder="<fmt:message key="productRegistration.namePlaceHolder" />">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <label for="produtoDescricao" class="form-label"><fmt:message key="productRegistration.description" />*</label>
+                            <div class="col-sm-12">
+                                <label for="produtoDescricao" class="form-label"><fmt:message key="productRegistration.description" /></label>
                                 <textarea class="form-control" id="produtoDescricao" name="produtoDescricao" value="${produtoDescricao}" cols="10" rows="2">
                                 </textarea>
                                 <div class="invalid-feedback">
@@ -84,64 +87,67 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-3">
                                 <label for="produtoPreco" class="form-label"><fmt:message key="productRegistration.price" /></label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">$</span>
-                                    <input type="text" class="form-control" id="produtoPreco" name="produtoPreco" placeholder="produtoPreco" value="${produtoPreco}">
+                                    <input type="text" class="form-control" id="produtoPreco" name="produtoPreco" placeholder="120.00" value="${produtoPreco}">
                                 </div>
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-3">
                                 <label for="produtoQuantidade" class="form-label"><fmt:message key="productRegistration.quantity" />*</label>
-                                <input type="number" class="form-control" id="produtoQuantidade" name="produtoQuantidade" placeholder="produtoQuantidade" value="${produtoQuantidade}">
+                                <input type="number" class="form-control" id="produtoQuantidade" name="produtoQuantidade" placeholder="10" value="${produtoQuantidade}">
                                 <div class="invalid-feedback">
                                     Please enter a valid email address for shipping updates.
+                                </div>
+                            </div>
+                            
+                            <div class="col-3">
+                                <label for="produtoCategoria" class="form-label"><fmt:message key="productRegistration.category" />*</label>
+                                <select class="form-select" id="produtoCategoria" name="produtoCategoria" required>
+                                    <option>-</option>
+                                    <option <% if ("Console".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %> ><fmt:message key="productRegistration.console" /></option>
+                                    <option <% if ("Jogos".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.games" /></option>
+                                    <option <% if ("Periféricos".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.peripheral" /></option>
+                                    <option <% if ("Acessórios".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.accessories" /></option>
+                                    <option <% if ("Outros".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>><fmt:message key="productRegistration.others" /></option>
+                                  </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
+                                </div>
+                            </div>
+                            
+                            <div class="col-3">
+                                <label for="produtoCondicao" class="form-label"><fmt:message key="productRegistration.condition" />*</label>
+                                <select class="form-select" id="produtoCondicao" name="produtoCondicao" required>
+                                    <option>-</option>
+                                    <option <% if ("Novo".equals(request.getParameter("produtoCondicao"))) out.print("selected"); %> ><fmt:message key="productRegistration.new" /></option>
+                                    <option <% if ("Usado".equals(request.getParameter("produtoCondicao"))) out.print("selected"); %>><fmt:message key="productRegistration.used" /></option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid country.
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="produtoImagem" class="form-label"><fmt:message key="productRegistration.image" />*</label>
-                                <input type="text" class="form-control" id="produtoImagem" name="produtoImagem" placeholder="https://minha-imagem.com" value="${produtoImagem}">
+                                <input type="text" class="form-control" id="produtoImagem" name="produtoImagem" placeholder="<fmt:message key="productRegistration.imagePlaceHolder" />" value="${produtoImagem}">
                                 <div class="invalid-feedback">
                                     Please select a valid country.
                                 </div>
                             </div>
 
-                            <div class="col-md-5">
-                                <label for="produtoCategoria" class="form-label"><fmt:message key="productRegistration.category" />*</label>
-                                <select class="form-select" id="produtoCategoria" name="produtoCategoria" required>
-                                    <option>-</option>
-                                    <option <% if ("Nintendo".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %> >Nintendo</option>
-                                    <option <% if ("Xbox".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>>Xbox</option>
-                                    <option <% if ("Playstation".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>>Playstation</option>
-                                    <option <% if ("Acessórios".equals(request.getParameter("produtoCategoria"))) out.print("selected"); %>>Acessórios</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select a valid country.
-                                </div>
-                            </div>
 
-                            <div class="col-12">
-                                <label for="produtoCondicao" class="form-label"><fmt:message key="productRegistration.condition" />*</label>
-                                <select class="form-select" id="produtoCondicao" name="produtoCondicao" required>
-                                    <option>-</option>
-                                    <option <% if ("Novo".equals(request.getParameter("produtoCondicao"))) out.print("selected"); %> >Novo</option>
-                                    <option <% if ("Usado".equals(request.getParameter("produtoCondicao"))) out.print("selected"); %>>Usado</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select a valid country.
-                                </div>
-                            </div>
                             <button class="w-100 btn btn-primary btn-lg" type="submit" name="cadastrar"> <fmt:message key="registration.button" /> </button> 
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-    </form>
     </main>
 
     <div class="container">
@@ -158,7 +164,9 @@
         </ul>
       </footer>
     </div>
-
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="/docs/5.3/assets/js/color-modes.js"></script>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

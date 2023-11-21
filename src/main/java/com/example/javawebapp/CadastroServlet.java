@@ -49,7 +49,7 @@ public class CadastroServlet extends HttpServlet {
                 req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
             } else{
                 // AQUI DataBase
-                UsuarioDao.cadastrar(nome, email, senha);
+                UsuarioDao.cadastrar(nome, sobrenome, username, senha, email, telefone, endereco, cep, Integer.parseInt(cidade));
                 res.sendRedirect("index.jsp");
             }
         } else {
