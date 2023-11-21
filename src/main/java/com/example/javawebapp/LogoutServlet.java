@@ -2,6 +2,8 @@ package com.example.javawebapp;
 
 import java.io.IOException;
 
+import com.example.javawebapp.usuario.Usuario;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,16 +16,19 @@ public class LogoutServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        String usuarioLogado = (String) session.getAttribute("usuarioLogado");
-
-        if (usuarioLogado == null) {
+        HttpSession session = req.getSession();        
+        Usuario usuarioLogado = (Usuario) session.getAttribute("usuarioLogado");
+         if (usuarioLogado == null) {
+            System.out.println("NAO TINHA SESSAO");
             res.sendRedirect("login.jsp");
             return;
         }
 
-        session.removeAttribute("usuarioLogado");
+       
 
-        res.sendRedirect("login.jsp");
+        session.removeAttribute("usuarioLogado");
+        System.out.println("SESSAO ELIMINADA");
+
+        res.sendRedirect("index.jsp");
     }
 }
