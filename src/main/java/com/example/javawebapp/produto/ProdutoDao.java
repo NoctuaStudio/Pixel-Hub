@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +16,15 @@ public class ProdutoDao {
 
     public static Produto cadastrar(Integer idUsuario, String nome, String descricao, String imagem, String categoria, Double preco, Integer quantidade, String usado) {
         Produto produto = null;
-        String sql = "INSERT INTO Produtos (ID_Usuario, Nome, Descricao, Imagem, Categoria, Preco, Quantidade, Usado, Hora_postagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)";
+        String sql = "INSERT INTO Produtos (ID_Usuario, Nome, Descricao, Imagem, Categoria, Preco, Quantidade, Usado, Hora_postagem) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+         LocalDateTime dataHoraAtual = LocalDateTime.now();
+
+        // Formatando a data e hora
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String dataHoraFormatada = dataHoraAtual.format(formatter);
+        System.out.println("DATA E HORA:" + dataHoraFormatada);
+
 
         try (
             Connection connection = Conexao.getConnection();
@@ -27,7 +37,9 @@ public class ProdutoDao {
             statement.setString(5, categoria);
             statement.setDouble(6, preco);
             statement.setInt(7, quantidade);
-            statement.setString(8, usado); // Modificado de setBoolean para setString
+            statement.setString(8, usado);
+            statement.setString(9, dataHoraFormatada); // Modificado de setBoolean para setString
+            
             statement.executeUpdate(); // Executando a query
 
             ResultSet rs = statement.getGeneratedKeys();
@@ -43,7 +55,7 @@ public class ProdutoDao {
                     preco,
                     quantidade,
                     usado,
-                    rs.getTimestamp("Hora_postagem").toLocalDateTime()
+                    dataHoraAtual
                 );
             }
 

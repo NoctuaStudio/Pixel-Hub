@@ -18,28 +18,37 @@ public class ProdutoCadastroForm {
 
     @Positive
     @NotNull
-    @NotBlank
     private Double preco;
 
     @Positive
     @NotNull
-    @NotBlank
     private int quantidade;
 
     @NotNull
     @NotBlank
     private String categoria;
 
+    
+    @NotNull
+    @NotBlank
+    private String condicao;
+
+
     @NotNull
     @NotBlank
     private String imagem;
 
-    public ProdutoCadastroForm(String nome, String descricao, Double preco2, int quantidade2, String categoria, String imagem) {
+   
+
+    public ProdutoCadastroForm(@NotNull @NotBlank String nome, @NotNull @NotBlank String descricao,
+            @Positive @NotNull Double preco, @Positive @NotNull int quantidade,
+            @NotNull @NotBlank String categoria, @NotNull @NotBlank String condicao, @NotNull @NotBlank String imagem) {
         this.nome = nome;
         this.descricao = descricao;
-        this.preco = preco2;
-        this.quantidade = quantidade2;
+        this.preco = preco;
+        this.quantidade = quantidade;
         this.categoria = categoria;
+        this.condicao = condicao;
         this.imagem = imagem;
     }
 
@@ -89,6 +98,14 @@ public class ProdutoCadastroForm {
 
     public void setImagem(String imagem) {
         this.imagem = imagem;
+    }
+
+    public String getCondicao() {
+        return condicao;
+    }
+
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
     }
 
 

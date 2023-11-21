@@ -36,6 +36,7 @@ public class ProdutoCadastroServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         System.out.println("CADASTRANDO VENDA");
+
         String nome = req.getParameter("produtoNome");
         String descricao = req.getParameter("produtoDescricao");
         Double preco = Double.parseDouble(req.getParameter("produtoPreco"));
@@ -54,14 +55,16 @@ public class ProdutoCadastroServlet extends HttpServlet {
   
 
         System.out.println("FAZENDO VALIDAÇÕES");
-        ProdutoCadastroForm produtoCadastroForm = new ProdutoCadastroForm(nome, descricao, preco, quantidade, categoria, imagem);
-
+        ProdutoCadastroForm produtoCadastroForm = new ProdutoCadastroForm(nome, descricao, preco, quantidade, categoria, condicao, imagem);
+        System.out.println("CRIANDO A LISTA DE VIOLATIONS");
         Set<ConstraintViolation<ProdutoCadastroForm>> violations = ValidatorUtil.validateObject(produtoCadastroForm);
+        //Set<ConstraintViolation<ProdutoCadastroForm>> violations = null;
+        
         System.out.println("VALIDAÇÕES FEITAS");
 
 
         System.out.println("VERIFICANDO ERROS:");
-        if (violations.isEmpty()) {
+        if (violations.isEmpty() || violations == null) {
             
             if(nome == descricao){
                 System.out.println("DEU ERRO:");
@@ -75,7 +78,7 @@ public class ProdutoCadastroServlet extends HttpServlet {
                 System.out.println("ID DO USUÁRIO LOGADO:"+id_usuario);
                 ProdutoDao.cadastrar(id_usuario, nome, descricao, imagem, categoria, preco, quantidade, condicao);
             }
-        } else {
+        } /*else {
             req.setAttribute("nome", nome);
             req.setAttribute("descricao", descricao);
             req.setAttribute("preco", preco);
@@ -84,7 +87,7 @@ public class ProdutoCadastroServlet extends HttpServlet {
             req.setAttribute("imagem", imagem);
             req.setAttribute("violations", violations);
             req.getRequestDispatcher("WEB-INF/cadastrar-produtos.jsp").forward(req, res);
-        }
+        }*/
     }
 }
 
