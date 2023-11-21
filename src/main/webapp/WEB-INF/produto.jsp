@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pixel Hub</title>
-    <link rel="stylesheet" href="styles/produto.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
     <link rel="icon" href="imagem/icone.png">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/produto.css">
 
   </head>
   <body>
@@ -63,50 +63,43 @@
       <div class="mt-lg-1">
         a
       </div>
-        <div class="container mt-lg-3">
-            <div class="card">
-                <div class="container-fliud">
-                    <div class="wrapper row">
-                        <div class="preview col-md-6">
-                            
-                            <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-                            </div>
-                            
-                        </div>
-                        <div class="details col-md-6">
-                            <h3 class="product-title">${produto.nome} Alvestuz</h3>
-                            <p>${usuario.nome} Alberto</p>
-                            <!--<div class="rating">
-                                <div class="stars">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                </div>
-                                <span class="review-no">41 reviews</span>
-                            </div>-->
-                            <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
-                            <p class="product-description"><c:out value="${produto.descricao}"/> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima optio esse in, quis neque, fugiat dolore eligendi ducimus quasi eveniet repellendus voluptate porro sequi iste nobis quisquam labore distinctio fugit.</p>
-                            <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-                            <div class="d-flex flex-row justify-content-evenly">
-                              <p><b><fmt:message key="product.category"/></b>${produto.categoria} Bola</p>
-                              <p><b><fmt:message key="product.condition"/></b>${produto.condicao} Usado</p>
-                              
-                            </div>
-                            <div class="action d-flex flex-row justify-content-between">
-                                <div class="col-6">
-                                  <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
-                                  <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
-                                </div>
-                                <button class="add-to-cart btn btn-default" type="button">add to cart</button>
-                            </div>
-                        </div>
-                    </div>
+      <div class="container mt-lg-3">
+        <div class="card p-3">
+          <div class="container-fliud">
+            <div class="wrapper row">
+              <div class="preview col-md-6">
+                <div class="preview-pic tab-content">
+                    <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
                 </div>
+              </div>
+              <div class="details col-md-6">
+
+                <h3 class="product-title">${produto.nome} Alvestuz</h3>
+
+                <p>${usuario.nome} Alberto</p>
+
+                <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.price}"/>120 pila</span></h4>
+                
+                <p class="product-description"><c:out value="${produto.descricao}"/> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima optio esse in, quis neque, fugiat dolore eligendi ducimus quasi eveniet repellendus voluptate porro sequi iste nobis quisquam labore distinctio fugit.</p>
+          
+                <div class="d-flex flex-row justify-content-between">
+                  <p><b><fmt:message key="product.category"/></b>${produto.categoria} Bola</p>
+                  <p><b><fmt:message key="product.condition"/></b>${produto.condicao} Usado</p>
+                </div>
+
+                <div class="action d-flex flex-row justify-content-between">
+                    <div class="col-6">
+                      <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
+                      <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
+                    </div>
+                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                </div>
+
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <div class="container">
