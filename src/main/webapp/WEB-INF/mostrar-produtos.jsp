@@ -334,6 +334,7 @@
                                                         <div class="col-md-12 product-info">
                                                             <p>${produto.descricao}</p>
                                                         </div>
+
                                                         <div class="col-md-12 product-price">
                                                             <h3>R$ ${produto.preco}</h3>
                                                         </div>

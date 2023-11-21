@@ -41,7 +41,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
-                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
+                  <li><button id="botaoLogout" class="dropdown-item"><fmt:message key="header.logout" /></button></li>
                 </ul>
               </div>
             </c:if>
@@ -178,6 +178,6 @@
     <script src="/docs/5.3/assets/js/color-modes.js"></script>
     <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    
+    <script src="indexScript.js"></script>
     </body>
 </html>
