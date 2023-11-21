@@ -118,8 +118,8 @@
             </div>
             <div class="col-lg-4">
               <img src="imagem/chat-square-dots.svg" class="bd-placeholder-img" width="70" height="70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
-              <h2 class="fw-normal" style="padding-top: 3%;"><fmt:message key="index.avaliation"/></h2>
-              <p><fmt:message key="index.avaliationMessage"/></p>
+              <h2 class="fw-normal" style="padding-top: 3%;"><fmt:message key="index.evaluation"/></h2>
+              <p><fmt:message key="index.evaluationMessage"/></p>
             </div>
             <div class="col-lg-4">
               <img src="imagem/patch-check.svg" class="bd-placeholder-img rounded-circle" width="70" height="70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
