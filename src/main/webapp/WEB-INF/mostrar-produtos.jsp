@@ -27,13 +27,13 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Comprar</a>
+                <a class="nav-link" href="produtos"><fmt:message key="header.buy" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Vender</a>
+                <a class="nav-link" href="vender"><fmt:message key="header.sell" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Suporte</a>
+                <a class="nav-link" href="suporte"><fmt:message key="header.support" /></a>
               </li>
             </ul>
             <c:if test="${not empty usuarioLogado}"> 
@@ -42,15 +42,15 @@
                   <c:out value="${usuarioLogado.nome}"/>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="perfil">Perfil</a></li>
-                  <li><a class="dropdown-item" href="logout">Sair</a></li>
+                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
                 </ul>
               </div>
             </c:if>
             <c:if test="${empty usuarioLogado}">
-              <div style="margin-right: 2%;">
-                <button type="button" class="btn btn-outline-primary"><a href="login" style="text-decoration: none;">Login</a></button>
-                <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;">Cadastrar</a></button>
+              <div class="ms-sm-2">
+                <button type="button" class="btn btn-outline-primary"><a href="login" style="text-decoration: none;"><fmt:message key="login.title" /></a></button>
+                <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;"><fmt:message key="registration.title" /></a></button>
               </div>
             </c:if> 
           </div>
@@ -64,9 +64,9 @@
             <div class="d-flex flex-row justify-content-evenly pt-3 mt-2">
                 
                 <div class="d-flex flex-row justify-content-evenly  ">
-                    <button class="btn rounded-2 text-bg-dark me-2" id="botaoTodasReceitas">Filtros</button>
+                    <button class="btn rounded-2 text-bg-dark me-2" id="botaoTodasReceitas"><fmt:message key="productShow.filter" /></button>
                     <div class="dropdown">
-                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">Console</button>
+                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"><fmt:message key="productShow.console" /></button>
                         <form>
                             <ul class="dropdown-menu dropdown-menu-dark p-2">
                                 <li class="d-flex">
@@ -105,23 +105,23 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Acessórios
+                                            <fmt:message key="productShow.accessories" />
                                         </label>
                                     </div>
                                 </li> 
-                                <button class="btn btn-dark w-100 mt-2" type="reset"> Limpar</button>
+                                <button class="btn btn-dark w-100 mt-2" type="reset"><fmt:message key="productShow.clean" /></button>
                             </ul>
                         </form>
                     </div>
                     <div class="dropdown">
-                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">Midia</button>
+                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"><fmt:message key="productShow.midia" /></button>
                         <form>
                             <ul class="dropdown-menu dropdown-menu-dark p-2">
                                 <li class="d-flex">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Midia Digital
+                                            <fmt:message key="productShow.digitalMidia" />
                                         </label>
                                     </div>
                                 </li>
@@ -129,23 +129,23 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Midia Física
+                                            <fmt:message key="productShow.physicalMidia" />
                                         </label>
                                     </div>
                                 </li>
-                                <button class="btn btn-dark w-100 mt-2" type="reset"> Limpar</button>
+                                <button class="btn btn-dark w-100 mt-2" type="reset"><fmt:message key="productShow.clean" /></button>
                             </ul>
                         </form>
                     </div>
                     <div class="dropdown">
-                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"> Estado</button>
+                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"><fmt:message key="productShow.condition" /></button>
                         <form>
                             <ul class="dropdown-menu dropdown-menu-dark p-2">
                                 <li class="d-flex">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Usado
+                                            <fmt:message key="productShow.used" />
                                         </label>
                                     </div>
                                 </li>
@@ -153,16 +153,16 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Novo
+                                            <fmt:message key="productShow.new" />
                                         </label>
                                     </div>
                                 </li>
-                                <button class="btn btn-dark w-100 mt-2" type="reset"> Limpar</button>
+                                <button class="btn btn-dark w-100 mt-2" type="reset"> <fmt:message key="productShow.clean" /></button>
                             </ul>
                         </form>
                     </div>
                     <div class="dropdown">
-                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"> Avaliação</button>
+                        <button class="btn border-2 border-black dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false"><fmt:message key="productShow.avaliation" /></button>
                         <form>
                             <ul class="dropdown-menu dropdown-menu-dark p-2">
                                 <li class="d-flex">
@@ -285,13 +285,13 @@
                                         </label>
                                     </div>
                                 </li>
-                                <button class="btn btn-dark w-100 mt-2" type="reset"> Limpar</button>
+                                <button class="btn btn-dark w-100 mt-2" type="reset"><fmt:message key="productShow.clean" /></button>
                             </ul>
                         </form>  
                     </div>
                 </div>
                 <div class="rounded-4 d-flex flex-row justify-content-evenly">
-                    <input type="text" class="form-control btn-outline-dark p-2" id="searchProdutos" placeholder="Buscar">
+                    <input type="text" class="form-control btn-outline-dark p-2" id="searchProdutos" placeholder='<fmt:message key="productShow.filter" />'>
                     <button class="btn text-bg-dark ms-1">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -308,7 +308,7 @@
                         <c:if test="${empty produtos}">
                             <div class="d-flex justify-content-center" id="produtosMensagem">
                                 <h1 class="align-self-center"> 
-                                    Nenhum produto encontrado! :(
+                                    <fmt:message key="productShow.notEncouterMessage" />
                                 </h1>
                             </div>
                         </c:if>
@@ -361,9 +361,9 @@
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Comprar</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vender</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+          <li class="nav-item"><a href="produtos" class="nav-link px-2 text-body-secondary"><fmt:message key="header.buy" /></a></li>
+          <li class="nav-item"><a href="vender" class="nav-link px-2 text-body-secondary"><fmt:message key="header.sell" /></a></li>
+          <li class="nav-item"><a href="suporte" class="nav-link px-2 text-body-secondary"><fmt:message key="header.support" /></a></li>
         </ul>
       </footer>
     </div>

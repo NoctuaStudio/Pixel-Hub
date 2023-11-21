@@ -25,13 +25,13 @@
           <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link" href="#">Comprar</a>
+                <a class="nav-link" href="produtos"><fmt:message key="header.buy" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Vender</a>
+                <a class="nav-link" href="vender"><fmt:message key="header.sell" /></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Suporte</a>
+                <a class="nav-link" href="suporte"><fmt:message key="header.support" /></a>
               </li>
             </ul>
             <c:if test="${not empty usuarioLogado}"> 
@@ -40,8 +40,8 @@
                   <c:out value="${usuarioLogado.nome}"/>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="perfil">Perfil</a></li>
-                  <li><a class="dropdown-item" href="logout">Sair</a></li>
+                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
                 </ul>
               </div>
             </c:if>
@@ -50,8 +50,8 @@
             </div>
             <c:if test="${empty usuarioLogado}">
               <div style="margin-right: 2%;">
-                <button type="button" class="btn btn-outline-primary"><a href="login" style="text-decoration: none;">Login</a></button>
-                <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;">Cadastrar</a></button>
+                <button type="button" class="btn btn-outline-primary"><a href="login" style="text-decoration: none;"><fmt:message key="login.title" /></a></button>
+                <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;"><fmt:message key="registration.title" /></a></button>
               </div>
             </c:if> 
           </div>
@@ -119,9 +119,9 @@
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         </a>
         <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Comprar</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Vender</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Suporte</a></li>
+          <li class="nav-item"><a href="produtos" class="nav-link px-2 text-body-secondary"><fmt:message key="header.buy" /></a></li>
+          <li class="nav-item"><a href="vender" class="nav-link px-2 text-body-secondary"><fmt:message key="header.sell" /></a></li>
+          <li class="nav-item"><a href="suporte" class="nav-link px-2 text-body-secondary"><fmt:message key="header.support" /></a></li>
         </ul>
       </footer>
     </div>
