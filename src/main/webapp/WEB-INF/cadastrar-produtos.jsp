@@ -68,7 +68,7 @@
             <div class="col-md-10 col-lg-8 rounded-4 shadow mt-5" style="border: 1px solid black;  background-color: white;">
                 <div style="padding: 7%;">
                     <h4 class="mb-3"><fmt:message key="productRegistration.title" /></h4>
-                    <form class="needs-validation" action="meu-produto" method="post">
+                    <form class="needs-validation" action="vender" method="post">
                         <div class="row g-3">
                             <div class="col-sm-12">
                                 <label for="produtoNome" class="form-label"><fmt:message key="productRegistration.name" /></label>

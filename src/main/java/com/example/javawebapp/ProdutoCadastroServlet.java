@@ -32,12 +32,24 @@ public class ProdutoCadastroServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        String nome = req.getParameter("nome");
-        String descricao = req.getParameter("descricao");
-        String preco = req.getParameter("preco");
-        String quantidade = req.getParameter("quantidade");
-        String categoria = req.getParameter("categoria");
-        String imagem = req.getParameter("imagem");
+        System.out.println("CADASTRANDO VENDA");
+        String nome = req.getParameter("produtoNome");
+        String descricao = req.getParameter("produtoDescricao");
+        Float preco = Float.parseFloat(req.getParameter("produtoPreco"));
+        int quantidade = Integer.parseInt( req.getParameter("produtoQuantidade"));
+        String categoria = req.getParameter("produtoConfirmar");
+        Boolean condicao = Boolean.parseBoolean(req.getParameter("produtoCondicao"));
+        String imagem = req.getParameter("produtoImagem");
+
+       System.out.println("DADOS:");
+       System.out.println("Nome: "+ nome);
+       System.out.println("preco: "+ preco);
+       System.out.println("quantidade: "+ quantidade);
+       System.out.println("categoria: "+ categoria);
+       System.out.println("condicao: "+ condicao);
+       System.out.println("imagem: "+ imagem);
+  
+
 
         ProdutoCadastroForm produtoCadastroForm = new ProdutoCadastroForm(nome, descricao, preco, quantidade, categoria, imagem);
 
