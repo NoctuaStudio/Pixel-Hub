@@ -1,6 +1,10 @@
 package com.example.javawebapp;
 
 import java.io.IOException;
+import java.util.List;
+
+import com.example.javawebapp.produto.Produto;
+import com.example.javawebapp.produto.ProdutoDao;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,6 +25,9 @@ public class ProdutosServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         req.getRequestDispatcher("WEB-INF/mostrar-produtos.jsp").forward(req, res);
+        List<Produto> produtos = ProdutoDao.listarTodos();
+        System.out.println(produtos.size());
+        req.setAttribute("produtos", produtos);
     }
 
     @Override

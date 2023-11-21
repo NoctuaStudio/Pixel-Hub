@@ -305,21 +305,22 @@
             <div class="container bootdey w-75">
                 <div class="col-md-12">
                     <div class="row product-list">
-                        <c:if test="${empty produtos}">
+                        <c:if test="${produtos.size() == 0}">
                             <div class="d-flex justify-content-center" id="produtosMensagem">
                                 <h1 class="align-self-center"> 
                                     <fmt:message key="productShow.notEncouterMessage" />
                                 </h1>
                             </div>
                         </c:if>
-                        <c:if test="${not empty produtos}">
+                        <c:if test="${produtos.size () >0}">
                             <c:forEach var="produto" items="${produtos}">
                                 <div class="col-sm-6 col-md-4 product-item animation-element slide-top-left">
                                     <div class="product-container">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="product-image">
-                                                    <img src="${produto.imagem}" class="img-responsive">
+                                                    <p> IMAGEM: </p>
+                                                    <img src="${produto.getImagem()}" class="img-responsive">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
