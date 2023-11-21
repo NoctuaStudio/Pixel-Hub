@@ -41,7 +41,7 @@
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
-                  <li><button id="botaoLogout" class="dropdown-item"><fmt:message key="header.logout" /></button></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
                 </ul>
               </div>
             </c:if>
