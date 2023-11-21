@@ -48,10 +48,23 @@
                     </svg></span>
                 </div>
             </form>
-            <div style="margin-right: 2%;">
-              <button type="button" class="btn btn-outline-primary me-2"><a href="login" style="text-decoration: none;">Login</a></button>
-              <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;">Cadastrar</a></button>
-            </div>
+            <c:if test="${not empty usuarioLogado}"> 
+              <div class="dropdown">
+                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <c:out value="${usuarioLogado.nome}"/>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
+                </ul>
+              </div>
+            </c:if>
+            <c:if test="${empty usuarioLogado}">
+              <div class="ms-sm-2">
+                <button type="button" class="btn btn-outline-primary"><a href="login" style="text-decoration: none;"><fmt:message key="login.title" /></a></button>
+                <button type="button" class="btn btn-primary"><a href="cadastro" style="text-decoration: none; color: white;"><fmt:message key="registration.title" /></a></button>
+              </div>
+            </c:if> 
           </div>
         </div>
       </nav>
