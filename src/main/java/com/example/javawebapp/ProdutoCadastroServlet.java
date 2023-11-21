@@ -78,19 +78,13 @@ public class ProdutoCadastroServlet extends HttpServlet {
         System.out.println("VERIFICANDO ERROS:");
         if (violations.isEmpty() || violations == null) {
             
-            if(nome == descricao){
-                System.out.println("DEU ERRO:");
-                // req.setAttribute("erroEmail", "Já existe um usuário com esse email!");
-                //req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
-            } else{
-                // CADASTRAR
-                HttpSession session = req.getSession();
-                Usuario usuarioLogado = (Usuario) session.getAttribute("usuarioLogado");
-                int id_usuario = usuarioLogado.getId();
-                System.out.println("ID DO USUÁRIO LOGADO:"+id_usuario);
-                ProdutoDao.cadastrar(id_usuario, nome, descricao, imagem, categoria, preco, quantidade, condicao);
+            HttpSession session = req.getSession();
+            Usuario usuarioLogado = (Usuario) session.getAttribute("usuarioLogado");
+            int id_usuario = usuarioLogado.getId();
+            System.out.println("ID DO USUÁRIO LOGADO:"+id_usuario);
+            ProdutoDao.cadastrar(id_usuario, nome, descricao, imagem, categoria, preco, quantidade, condicao);
             }
-        } else {
+         else {
             req.setAttribute("nome", nome);
             req.setAttribute("descricao", descricao);
             req.setAttribute("preco", preco);

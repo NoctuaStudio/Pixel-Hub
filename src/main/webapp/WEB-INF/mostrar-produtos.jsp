@@ -320,7 +320,7 @@
                                             <div class="col-md-12">
                                                 <div class="product-image">
                                                     <p> IMAGEM: </p>
-                                                    <img src="${produto.getImagem()}" class="img-responsive">
+                                                    <img src="${produto.imagem}" class="img-responsive">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
