@@ -3,6 +3,7 @@ package com.example.javawebapp;
 import java.io.IOException;
 import java.util.Set;
 import com.example.javawebapp.validators.ValidatorUtil;
+import com.example.javawebapp.cidade.CidadeDao;
 import com.example.javawebapp.forms.CadastroForm;
 import com.example.javawebapp.usuario.UsuarioDao;
 
@@ -48,8 +49,8 @@ public class CadastroServlet extends HttpServlet {
                 req.setAttribute("erroEmail", "Já existe um usuário com esse email!");
                 req.getRequestDispatcher("WEB-INF/cadastro.jsp").forward(req, res);
             } else{
-                // AQUI DataBase
-                UsuarioDao.cadastrar(nome, sobrenome, username, senha, email, telefone, endereco, cep, Integer.parseInt(cidade));
+                int id_cidade = CidadeDao.obterIdPorNome(cidade);
+                UsuarioDao.cadastrar(nome, sobrenome, username, senha, email, telefone, endereco, cep, id_cidade);
                 res.sendRedirect("index.jsp");
             }
         } else {

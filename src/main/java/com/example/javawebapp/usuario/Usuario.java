@@ -104,5 +104,14 @@ public class Usuario {
     public void setID_Cidade(int iD_Cidade) {
         ID_Cidade = iD_Cidade;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", username=" + username
+                + ", senha=" + senha + ", email=" + email + ", telefone=" + telefone + ", endereco=" + endereco
+                + ", cep=" + cep + ", ID_Cidade=" + ID_Cidade + "]";
+    }
+
+    
     
 }

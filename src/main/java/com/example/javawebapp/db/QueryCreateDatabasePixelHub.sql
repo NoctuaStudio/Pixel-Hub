@@ -21,7 +21,7 @@ CREATE TABLE Usuarios(
   Nome varchar(100),
   Sobrenome varchar(100),
   Username varchar(50),
-  Senha varchar(50),
+  Senha varchar(10000),
   Email varchar(100),
   Telefone varchar(20),
   Endereco varchar(255),

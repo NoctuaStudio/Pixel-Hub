@@ -41,6 +41,8 @@ public class UsuarioDao {
 
             if(rs.next()) {
                 usuario = new Usuario(rs.getInt(1), nome, sobrenome, username, hashSenha, email, telefone, endereco, cep, ID_Cidade);
+
+                System.out.println("CADASTREI O USUARIO, DADOS DO USUARIO:"+ usuario.toString());
             }
 
             rs.close();
@@ -142,6 +144,10 @@ public class UsuarioDao {
     
     public static Boolean existeComEmail(String email) {
         return buscarPorEmail(email) != null;
+    }
+
+    public static String apresentarDadosString(Usuario usuario){
+        return usuario.toString();
     }
 }
 

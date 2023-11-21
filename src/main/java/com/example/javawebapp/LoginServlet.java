@@ -54,8 +54,9 @@ public class LoginServlet extends HttpServlet {
         if(violations.isEmpty()){
             if(UsuarioDao.login(email, senha)){
                 HttpSession session = req.getSession();
-                session.setAttribute("usuarioLogado", email);
+                session.setAttribute("usuarioLogado", UsuarioDao.buscarPorEmail(email));
                 res.sendRedirect("index.jsp");
+                System.out.println("COLOQUEI O USUARIO NA SESSÃO. DADOS DO USUARIO NA SESSÃO:"+session.getAttribute("usuarioLogado").toString());
             } else{
                 req.setAttribute("erroLogin", "Email ou senha incorretos!");
                 req.getRequestDispatcher("WEB-INF/login.jsp").forward(req, res);
