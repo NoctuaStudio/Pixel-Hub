@@ -40,8 +40,8 @@
                   <c:out value="${usuarioLogado.nome}"/>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
-                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
+                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /> perfil </a></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /> logout </a></li>
                 </ul>
               </div>
             </c:if>
@@ -71,7 +71,7 @@
             <img src="imagem/nintendo-switch.jpg" style="filter: brightness(75%)" class="bd-placeholder-img" width="100%" height="550px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></img>
             <div class="container">
               <div class="carousel-caption text-start">
-                <h1><fmt:message key="index.nintentoTitle"/></h1>
+                <h1><fmt:message key="index.nintendoTitle"/></h1>
                 <p class="opacity-75"><fmt:message key="index.nintendoMessage"/></p>
                 <p><a class="btn btn-lg btn-primary" href="#"><fmt:message key="index.seeMore"/></a></p>
               </div>
