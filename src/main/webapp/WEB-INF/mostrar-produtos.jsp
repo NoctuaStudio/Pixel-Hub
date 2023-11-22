@@ -20,7 +20,7 @@
     <header data-bs-theme="dark">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <img src="imagem/icone-branco.png" alt="" width="auto" height="50px" style="margin-right: 1%;"> <a class="navbar-brand" href="#"> Pixel Hub</a>
+          <img src="imagem/icone-branco.png" alt="" width="auto" height="50px" style="margin-right: 1%;"> <a class="navbar-brand" href="/home"> Pixel Hub</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -326,7 +326,7 @@
                                                 <div class="product-info">
                                                     <div class="row">
                                                         <div class="col-md-12 product-name">
-                                                            <a href="produto?id=${produto.id}">
+                                                            <a href="produto?id=${produto.id}" class="text-decoration-none text-black">
                                                                 <h2>${produto.nome}</h2>
                                                             </a>
                                                         </div>

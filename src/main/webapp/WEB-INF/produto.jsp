@@ -18,7 +18,7 @@
     <header data-bs-theme="dark">
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <img src="imagem/icone-branco.png" alt="" width="auto" height="50px" style="margin-right: 1%;"> <a class="navbar-brand" href="/java-web-app-1.0/"> Pixel Hub</a>
+          <img src="imagem/icone-branco.png" alt="" width="auto" height="50px" style="margin-right: 1%;"> <a class="navbar-brand" href="/home"> Pixel Hub</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -69,7 +69,7 @@
             <div class="wrapper row">
               <div class="preview col-md-6">
                 <div class="preview-pic tab-content">
-                    <div class="tab-pane active" id="pic-1"><img width="550px" height="300px" src="${produto.imagem}" /></div>
+                    <div class="tab-pane active" id="pic-1"><img width="500px" height="300px" src="${produto.imagem}" /></div>
                 </div>
               </div>
               <div class="details col-md-6">
@@ -92,7 +92,7 @@
                       <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
                       <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
                     </div>
-                    <button class="add-to-cart btn btn-default" type="button">add to cart</button>
+                    <button class="add-to-cart btn btn-dark" type="button">add to cart</button>
                 </div>
 
               </div>
