@@ -83,7 +83,8 @@ public class ProdutoCadastroServlet extends HttpServlet {
             int id_usuario = usuarioLogado.getId();
             System.out.println("ID DO USUÁRIO LOGADO:"+id_usuario);
             ProdutoDao.cadastrar(id_usuario, nome, descricao, imagem, categoria, preco, quantidade, condicao);
-            }
+            res.sendRedirect("index.jsp");
+        }
          else {
             req.setAttribute("nome", nome);
             req.setAttribute("descricao", descricao);
