@@ -51,7 +51,7 @@ public class CadastroServlet extends HttpServlet {
             } else{
                 int id_cidade = CidadeDao.obterIdPorNome(cidade);
                 UsuarioDao.cadastrar(nome, sobrenome, username, senha, email, telefone, endereco, cep, id_cidade);
-                res.sendRedirect("index.jsp");
+                res.sendRedirect("login");
             }
         } else {
             req.setAttribute("nome", nome);

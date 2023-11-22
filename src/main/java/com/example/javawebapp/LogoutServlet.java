@@ -29,6 +29,6 @@ public class LogoutServlet extends HttpServlet {
         session.removeAttribute("usuarioLogado");
         System.out.println("SESSAO ELIMINADA");
 
-        res.sendRedirect("index");
+        res.sendRedirect("home");
     }
 }
