@@ -145,7 +145,7 @@
               </div>
               <div>
                 <div style="width: 80%;  margin-left: 10%; padding: 2%;">
-                  <a href="/java-web-app-1.0">
+                  <a href="/home">
                     <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" > Voltar</button>
                   </a>
                 </div>
