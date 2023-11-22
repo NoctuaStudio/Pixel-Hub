@@ -280,8 +280,8 @@
         <footer class="my-5 pt-5 text-body-secondary text-center text-small">
             <p class="mb-1">&copy; 2023 Pixel Hub</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="termos.jsp"><fmt:message key="registration.terms" /></a></li>
-                <li class="list-inline-item"><a href="suporte.jsp"><fmt:message key="registration.support" /></a></li>
+                <li class="list-inline-item"><a href="termos"><fmt:message key="registration.terms" /></a></li>
+                <li class="list-inline-item"><a href="suporte"><fmt:message key="registration.support" /></a></li>
             </ul>
         </footer>
 
