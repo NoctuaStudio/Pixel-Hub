@@ -92,7 +92,9 @@
                       <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
                       <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
                     </div>
-                    <button class="add-to-cart btn btn-dark" type="button">add to cart</button>
+                    <form action="/carrinho">
+                    <button class="add-to-cart btn btn-dark" type="button"><fmt:message key="product.addToCart"></button>
+                    </form>
                 </div>
 
               </div>
