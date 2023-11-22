@@ -82,7 +82,7 @@
             <div class="container">
               <div class="carousel-caption">
                 <h1><fmt:message key="index.lebronControllerTitle"/></h1>
-                <p><fmt:message key="index.lebronMessage"/></p>
+                <p><fmt:message key="index.lebronControllerMessage"/></p>
                 <p><a class="btn btn-lg btn-primary" href="#"><fmt:message key="index.seeMore"/></a></p>
               </div>
             </div>
