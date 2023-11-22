@@ -78,7 +78,7 @@
 
                 <p>${usuario.nome}</p>
 
-                <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.preco}"/></span></h4>
+                <h4 class="price"><fmt:message key="product.price" />:<c:out value="${produto.preco}"/></h4>
                 
                 <p class="product-description"><c:out value="${produto.descricao}"/></p>
           
@@ -92,9 +92,7 @@
                       <label for="quantidadeDesejada"><fmt:message key="product.quantity"/>:</label>
                       <input class="form-control rounded-3" type="number" name="quantidadeDesejada" id="quantidadeDesejada" min="1" max="${produto.quantidade}" value="1">
                     </div>
-                    <form action="/carrinho">
-                    <button class="add-to-cart btn btn-dark" type="button"><fmt:message key="product.addToCart"></button>
-                    </form>
+                    <button class="add-to-cart btn btn-dark" type="button">add to cart</button>
                 </div>
 
               </div>

@@ -40,8 +40,8 @@
                   <c:out value="${usuarioLogado.nome}"/>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /> perfil </a></li>
-                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /> logout </a></li>
+                  <li><a class="dropdown-item" href="perfil"><fmt:message key="header.profile" /></a></li>
+                  <li><a class="dropdown-item" href="logout"><fmt:message key="header.logout" /></a></li>
                 </ul>
               </div>
             </c:if>
