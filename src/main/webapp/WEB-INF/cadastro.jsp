@@ -201,7 +201,7 @@
                                             </c:choose>
                                             <c:choose>
                                                 <c:when test="${errosSenha[4] == null}">
-                                                    <li><p class="password-rule-2"><fmt:message key="registration.confirmPasswordLenght" /></p></li>
+                                                    <li><p class="password-rule-2"><fmt:message key="registration.confirmPasswordLength" /></p></li>
                                                 </c:when>
                                                 <c:otherwise>
                                                     <c:if test="${!errosSenha[4]}">
