@@ -3,11 +3,9 @@ package com.example.javawebapp;
 import java.io.IOException;
 import java.util.Set;
 
-import com.example.javawebapp.forms.CadastroForm;
 import com.example.javawebapp.forms.ProdutoCadastroForm;
 import com.example.javawebapp.produto.ProdutoDao;
 import com.example.javawebapp.usuario.Usuario;
-import com.example.javawebapp.usuario.UsuarioDao;
 import com.example.javawebapp.validators.ValidatorUtil;
 
 import jakarta.servlet.ServletException;
